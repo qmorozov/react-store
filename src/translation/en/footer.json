@@ -1,0 +1,32 @@
+{
+  "SellMyProduct": "Sell my product",
+  "AddMyShop": "Add my shop",
+  "EditMyShop": "Edit my shop",
+  "PrivacyPolicy": "Privacy Policy",
+  "Terms&Conditions": "Terms & Conditions",
+  "Selling": {
+    "title": "Selling",
+    "EstimateMyProduct": "Estimate my product",
+    "SellMyProduct": "Sell my product",
+    "CreateMyShop": "Create my shop",
+    "AdviceForSellers": "Advice for sellers",
+    "Pricing": "Pricing"
+  },
+  "Buyer": {
+    "title": "Buyer",
+    "DeliveryAndPayment": "Delivery and payment",
+    "Guarantees": "Guarantees",
+    "ReturnPolicy": "Return Policy",
+    "SafetyRules": "Safety rules",
+    "PagesHelp": "Pages help"
+  },
+  "About": {
+    "title": "About",
+    "Company": "Company",
+    "Contacts": "Contacts",
+    "FAQ": "FAQ"
+  },
+  "Settings": {
+    "title": "Settings"
+  }
+}

@@ -1,0 +1,98 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+@import '../../../../layouts/shared/ProductListCard';
+@import '../../../../layouts/shared/Dialog';
+
+.summary-tab {
+  &__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+
+  @include media.for-mobile {
+    &__buttons {
+      gap: variables.rem(8px);
+      margin-top: variables.rem(24px);
+    }
+
+    .manage-product__save-btn {
+      margin-top: variables.rem(8px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__buttons {
+      gap: variables.rem(12px);
+      margin-top: variables.rem(48px);
+    }
+
+    .manage-product__save-btn {
+      margin-top: variables.rem(10px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__buttons {
+      gap: variables.rem(16px);
+      margin-top: variables.rem(72px);
+    }
+
+    .manage-product__save-btn {
+      margin-top: variables.rem(12px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__buttons {
+      margin-top: variables.rem(96px);
+    }
+
+    .manage-product__save-btn {
+      margin-top: variables.rem(12px);
+    }
+  }
+}
+
+.summary-list {}
+
+.remove-sub-product__buttons {
+  display: flex;
+  width: 100%;
+  gap: variables.rem(8px);
+
+  button {
+    flex-basis: 50%;
+  }
+
+  @include media.for-tablet {
+    button {
+      padding: variables.rem(16px);
+    }
+  }
+
+  @include media.for-laptop {
+    button {
+      padding: variables.rem(21px);
+    }
+  }
+}
+
+.manage-subproduct-general {
+  margin-top: variables.rem(24px);
+
+  @include media.for-laptop {
+    margin-top: variables.rem(32px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(40px);
+  }
+}

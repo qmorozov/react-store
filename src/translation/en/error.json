@@ -1,0 +1,10 @@
+{
+  "email": "Please enter a valid email address",
+  "required": "This field is required",
+  "minLength": "Password must contain more characters",
+  "same_password": "Passwords should match!",
+  "yearMin": "Min year {{min}}",
+  "yearMax": "Max year {{max}}",
+  "min": "Min {{min}}",
+  "max": "Max {{max}}"
+}

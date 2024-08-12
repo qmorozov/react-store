@@ -1,0 +1,160 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import '../../../layouts/shared/Loader/index.scss';
+
+.faq {
+  @include media.for-mobile {
+    &__title {
+      margin-top: variables.rem(52px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__title {
+      margin-top: variables.rem(68px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__title {
+      margin-top: variables.rem(66px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__title {
+      margin-top: variables.rem(61px);
+    }
+  }
+}
+
+.faq__items {
+  display: flex;
+  flex-direction: column;
+  gap: variables.rem(48px);
+}
+
+.faq__item {
+  .accordion {
+    &__value {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      border-bottom: variables.rem(1px) solid #c2c2c2;
+      padding-bottom: variables.rem(16px);
+
+      .icon {
+        position: absolute;
+        right: 0;
+        bottom: variables.rem(-10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 100%;
+        border: variables.rem(1px) solid variables.$dark;
+        font-size: variables.rem(5px);
+        width: variables.rem(56px);
+        height: variables.rem(56px);
+      }
+
+      span {
+        font-family: 'Times New Roman', sans-serif;
+        font-style: italic;
+        display: block;
+        max-width: 90%;
+        font-size: variables.rem(20px);
+        line-height: variables.rem(24px);
+      }
+    }
+  }
+
+  &:first-child {
+    border-top: variables.rem(1px) solid #c2c2c2;
+    padding-top: variables.rem(50px);
+  }
+
+  p {
+    font-weight: variables.$fw-light;
+  }
+
+  .accordion__content {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease-in-out, height 0.6s ease-in-out;
+
+    &.--open {
+      border-bottom-color: #c2c2c2;
+    }
+  }
+
+  @include media.for-mobile {
+    p {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(31px);
+    }
+
+    .faq__item-body {
+      padding: variables.rem(20px) 0;
+    }
+  }
+
+  @include media.for-tablet {
+    p {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(34px);
+    }
+
+    .faq__item-body {
+      padding: variables.rem(26px) 0;
+    }
+  }
+
+  @include media.for-laptop {
+    .accordion__value {
+      span {
+        font-size: variables.rem(24px);
+        line-height: variables.rem(29px);
+      }
+
+      .icon {
+        width: variables.rem(64px);
+        height: variables.rem(64px);
+        font-size: variables.rem(6px);
+      }
+    }
+
+    p {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(38px);
+    }
+
+    .faq__item-body {
+      padding: variables.rem(30px) 0;
+    }
+  }
+
+  @include media.for-desktop {
+    .accordion__value {
+      span {
+        font-size: variables.rem(32px);
+        line-height: variables.rem(38px);
+      }
+
+      .icon {
+        width: variables.rem(72px);
+        height: variables.rem(72px);
+        font-size: variables.rem(6px);
+      }
+    }
+
+    p {
+      font-size: variables.rem(21px);
+      line-height: variables.rem(50px);
+    }
+
+    .faq__item-body {
+      padding: variables.rem(36px) 0;
+    }
+  }
+}

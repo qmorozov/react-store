@@ -1,0 +1,114 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.message__product {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  color: variables.$dark;
+  background-color: #e1e1e1;
+  border-radius: variables.rem(8px) variables.rem(8px) variables.rem(8px) 0;
+  margin-top: variables.rem(24px);
+  overflow: hidden;
+  max-width: 300px;
+
+  &.--own-message {
+    margin-left: auto;
+    color: #fff;
+    background-color: variables.$primary;
+    border-radius: variables.rem(8px) variables.rem(8px) 0 variables.rem(8px);
+    margin-top: variables.rem(6px);
+
+  }
+
+  .message-meta {
+    float: left;
+    margin-left: auto;
+  }
+
+  img {
+    max-width: variables.rem(300px);
+    width: 100%;
+    max-height: variables.rem(300px);
+    height: 100%;
+    z-index: 0;
+    transition: filter 0.3s ease-in-out;
+  }
+
+  &-info {
+    display: flex;
+    gap: variables.rem(10px);
+    flex-direction: column;
+    padding: variables.rem(14px) variables.rem(20px);
+  }
+
+  &-price {
+    margin-left: auto;
+  }
+
+  &:hover img {
+    filter: brightness(.85);
+  }
+
+  &-title,
+  &-description,
+  &-year {
+    font-size: variables.rem(13px);
+    font-weight: variables.$fw-semi-bold;
+    line-height: variables.rem(24px);
+  }
+
+  &-description {
+    font-weight: variables.$fw-regular;
+  }
+
+  &-year {
+    font-weight: variables.$fw-extra-light;
+  }
+
+  &-price {
+    display: flex;
+    font-weight: variables.$fw-semi-bold;
+    font-size: variables.rem(16px);
+    line-height: variables.rem(20px);
+
+    span {
+      display: block;
+      font-weight: inherit;
+      margin-left: variables.rem(2px);
+      font-size: variables.rem(10px);
+      line-height: variables.rem(12px);
+    }
+  }
+
+
+  @include media.for-laptop {
+    &-price {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(24px);
+
+      span {
+        margin-left: variables.rem(3px);
+        font-size: variables.rem(12px);
+        line-height: variables.rem(16px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    &.--own-message {
+      margin-top: variables.rem(8px);
+    }
+
+    &-title,
+    &-description {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(28px);
+    }
+
+    &-price {
+      font-size: variables.rem(22px);
+      line-height: variables.rem(28px);
+    }
+  }
+}

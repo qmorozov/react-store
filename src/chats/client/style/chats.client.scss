@@ -1,0 +1,328 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import 'MessageMeta.client';
+@import 'ChatListItem.client';
+@import 'ChatHeader.client';
+@import 'ChatMessageInput.client';
+@import 'TextMessage.client';
+@import 'MediaMessage.client';
+@import 'ProductMessage.client';
+
+.chat-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: variables.rem(40px);
+  height: variables.rem(40px);
+  border-radius: 100%;
+  user-select: none;
+
+  img {
+    border-radius: inherit;
+  }
+
+  .chat-avatar__online {
+    position: absolute;
+    right: variables.rem(2px);
+    bottom: variables.rem(2px);
+    display: block;
+    width: variables.rem(9px);
+    height: variables.rem(9px);
+    background-color: #fff;
+    border-radius: 100%;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      bottom: 50%;
+      left: 50%;
+      content: '';
+      width: variables.rem(3px);
+      height: variables.rem(3px);
+      background-color: variables.$fullBlack;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include media.for-desktop {
+    width: variables.rem(48px);
+    height: variables.rem(48px);
+
+    &__online {
+      width: variables.rem(12px);
+      height: variables.rem(12px);
+
+      &::before {
+        width: variables.rem(4px);
+        height: variables.rem(4px);
+      }
+    }
+  }
+}
+
+.chats-list {
+  width: 100%;
+  overflow-y: scroll;
+  border-right: variables.rem(3px) solid #f9f9f9;
+  border-left: variables.rem(3px) solid #f9f9f9;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  @include media.for-mobile {
+    max-height: calc(100vh - 130px);
+  }
+
+  @include media.for-tablet {
+    max-height: calc(100vh - 156px);
+    max-width: variables.rem(230px);
+  }
+
+  @include media.for-laptop {
+    max-height: calc(100vh - 154px);
+    max-width: variables.rem(238px);
+  }
+
+  @include media.for-desktop {
+    max-height: calc(100vh - 202px);
+    max-width: variables.rem(350px);
+  }
+}
+
+.chats-container {
+  padding: 0;
+
+  &.--no-chats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-one {
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-right: variables.rem(3px) solid #f9f9f9;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &.--no-chat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @include media.for-mobile {
+    height: calc(100vh - 171px);
+
+    .chat-one {
+      border-left: variables.rem(3px) solid #f9f9f9;
+      max-height: calc(100vh - 171px);
+    }
+
+    &.--no-chats {
+      height: calc(100vh - 170px);
+    }
+  }
+
+  @include media.for-tablet {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: calc(100vh - 138px);
+    grid-template-columns: minmax(min-content, variables.rem(230px)) 1fr;
+
+    .chat-one {
+      max-height: calc(100vh - 148px);
+    }
+
+    &.--no-chats {
+      height: calc(100vh - 148px);
+    }
+  }
+
+  @include media.for-laptop {
+    height: calc(100vh - 154px);
+    grid-template-columns: minmax(min-content, variables.rem(238px)) 1fr;
+
+    .chat-one {
+      max-height: calc(100vh - 154px);
+    }
+
+    &.--no-chats {
+      height: calc(100vh - 154px);
+    }
+  }
+
+  @include media.for-desktop {
+    height: calc(100vh - 202px);
+    grid-template-columns: minmax(min-content, variables.rem(350px)) 1fr;
+
+    .chat-one {
+      max-height: calc(100vh - 202px);
+    }
+
+    &.--no-chats {
+      height: calc(100vh - 202px);
+    }
+  }
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include media.for-mobile {
+    min-height: calc(100vh - 312px);
+    padding: variables.rem(24px) variables.rem(16px);
+  }
+
+  @include media.for-tablet {
+    min-height: calc(100vh - 290px);
+    padding: variables.rem(24px) variables.rem(42px);
+  }
+
+  @include media.for-laptop {
+    min-height: calc(100vh - 302px);
+    padding: variables.rem(32px) variables.rem(52px);
+  }
+
+  @include media.for-desktop {
+    min-height: calc(100vh - 396px);
+    padding: variables.rem(40px) variables.rem(77px);
+  }
+}
+
+.chats-empty {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  span {
+    font-weight: variables.$fw-medium;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-weight: variables.$fw-light;
+    letter-spacing: 0.02em;
+    color: #7a7a7a;
+    margin: 0 auto;
+  }
+
+  @include media.for-mobile {
+    max-width: variables.rem(200px);
+
+    span {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(24px);
+    }
+
+    .btn {
+      margin-top: variables.rem(12px);
+    }
+
+    p {
+      max-width: variables.rem(150px);
+      margin-top: variables.rem(12px);
+      font-size: variables.rem(14px);
+      line-height: variables.rem(20px);
+    }
+  }
+
+  @include media.for-tablet {
+    max-width: variables.rem(220px);
+
+    span {
+      font-size: variables.rem(20px);
+      line-height: variables.rem(26px);
+    }
+
+    .btn {
+      margin-top: variables.rem(14px);
+    }
+
+    p {
+      max-width: variables.rem(160px);
+      margin-top: variables.rem(14px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(22px);
+    }
+  }
+
+  @include media.for-laptop {
+    max-width: variables.rem(240px);
+
+    span {
+      font-size: variables.rem(22px);
+      line-height: variables.rem(28px);
+    }
+
+    .btn {
+      margin-top: variables.rem(15px);
+    }
+
+    p {
+      max-width: variables.rem(170px);
+      margin-top: variables.rem(15px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(24px);
+    }
+  }
+
+  @include media.for-desktop {
+    max-width: variables.rem(250px);
+
+    span {
+      font-size: variables.rem(24px);
+      line-height: variables.rem(28px);
+    }
+
+    .btn {
+      margin-top: variables.rem(16px);
+    }
+
+    p {
+      max-width: variables.rem(180px);
+      margin-top: variables.rem(16px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(32px);
+    }
+  }
+}
+
+
+.chat-messages__group {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-top: variables.rem(40px);
+
+  .chat-messages__date {
+    position: absolute;
+    top: variables.rem(10px);
+    right: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    width: fit-content;
+    font-size: variables.rem(12px);
+    line-height: variables.rem(20px);
+    user-select: none;
+  }
+
+  @include media.for-laptop {
+    font-size: variables.rem(13px);
+    line-height: variables.rem(22px);
+  }
+
+  @include media.for-desktop {
+    font-size: variables.rem(15px);
+    line-height: variables.rem(27px);
+  }
+}

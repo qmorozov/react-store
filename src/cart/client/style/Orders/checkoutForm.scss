@@ -1,0 +1,66 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: variables.$fw-semi-bold;
+      font-size: variables.rem(16px);
+      line-height: variables.rem(22px);
+      text-align: center;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  @include media.for-mobile {
+    & > * {
+      gap: variables.rem(48px);
+      margin-top: variables.rem(50px);
+    }
+  }
+
+  @include media.for-tablet {
+    & > * {
+      gap: variables.rem(56px);
+      margin-top: variables.rem(76px);
+    }
+  }
+
+  @include media.for-laptop {
+    & > * {
+      gap: variables.rem(72px);
+      margin-top: variables.rem(86px);
+
+      h3 {
+        font-size: variables.rem(20px);
+        line-height: variables.rem(28px);
+      }
+
+      fieldset {
+        gap: variables.rem(32px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    & > * {
+      gap: variables.rem(88px);
+      margin-top: variables.rem(110px);
+
+      fieldset {
+        gap: variables.rem(40px);
+      }
+    }
+  }
+}

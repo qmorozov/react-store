@@ -1,0 +1,11 @@
+{
+  "title": "Shop",
+  "addAProduct": "Add a product",
+  "preview": "Preview",
+  "edit": "Edit",
+  "markAsSold": "Mark as Sold",
+  "noInfo": {
+    "title": "You don't have any listed items",
+    "subTitle": "Start listing items to sell"
+  }
+}

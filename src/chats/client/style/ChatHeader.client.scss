@@ -1,0 +1,114 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.chat-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  column-gap: variables.rem(16px);
+  width: 100%;
+  border-bottom: variables.rem(2px) solid #f9f9f9;
+  background-color: #fff;
+  backdrop-filter: blur(variables.rem(12.5px));
+
+  &__info {
+    display: flex;
+    user-select: none;
+  }
+
+  &__name {
+    font-weight: variables.$fw-medium;
+    font-size: variables.rem(13px);
+    line-height: variables.rem(16px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: variables.rem(200px);
+  }
+
+  &__time {
+    font-weight: variables.$fw-light;
+    color: variables.$lightGrey;
+  }
+
+  .chat-avatar,
+  &__info {
+    transition: filter 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(16px) variables.rem(18px) variables.rem(16px) variables.rem(16px);
+
+    &__info {
+      flex-direction: column;
+      row-gap: variables.rem(8px);
+    }
+
+    &__name {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+      max-width: variables.rem(100px);
+    }
+
+    &__time {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(13px);
+    }
+
+    &__back {
+      display: flex;
+      flex-shrink: 0;
+      cursor: pointer;
+      margin-left: auto;
+      font-size: variables.rem(14px);
+      color: variables.$dark;
+    }
+  }
+
+  @include media.for-tablet {
+    padding: variables.rem(16px) variables.rem(43px) variables.rem(16px) variables.rem(40px);
+
+    &__info {
+      column-gap: variables.rem(12px);
+    }
+
+    &__name,
+    &__time {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(14px);
+    }
+
+    &__back {
+      display: none;
+    }
+  }
+
+  @include media.for-laptop {
+    padding: variables.rem(16px) variables.rem(52px) variables.rem(16px) variables.rem(50px);
+  }
+
+  @include media.for-desktop {
+    padding: variables.rem(24px) variables.rem(76px) variables.rem(24px) variables.rem(78px);
+    column-gap: variables.rem(24px);
+
+    &__info {
+      column-gap: variables.rem(16px);
+    }
+
+    &__name,
+    &__time {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(19px);
+    }
+
+    .icon-not-available {
+      font-size: variables.rem(18px);
+    }
+  }
+}

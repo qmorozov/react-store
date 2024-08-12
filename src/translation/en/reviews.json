@@ -1,0 +1,13 @@
+{
+  "title": "Reviews",
+  "mine": "Mine",
+  "forMe": "For me",
+  "noReviewsForMe": {
+    "title": "You don’t have any reviews now",
+    "subTitle": "Start selling to get the first one"
+  },
+  "noReviewsMine": {
+    "title": "You haven't written any reviews yet",
+    "subTitle": "Buy a product to leave your first review"
+  }
+}

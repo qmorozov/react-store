@@ -1,0 +1,107 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+@import '@style/parts/_title.scss';
+
+.page-container {
+  h1 {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    word-break: break-word;
+    font-weight: variables.$fw-medium;
+    letter-spacing: -.02em;
+    @extend .title;
+  }
+
+  .page-content {
+    margin-top: variables.rem(40px);
+  }
+
+  p {
+    font-weight: variables.$fw-light;
+    word-break: break-word;
+  }
+
+  ul,
+  p {
+    margin-top: variables.rem(20px);
+  }
+
+  ul {
+    padding-left: variables.rem(16px);
+  }
+
+  ul,
+  li {
+    list-style: inherit;
+  }
+
+  @include media.for-mobile {
+    h1 {
+      max-width: variables.rem(343px);
+    }
+
+    p {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(31px);
+    }
+  }
+
+  @include media.for-tablet {
+    h1 {
+      max-width: variables.rem(398px);
+      font-size: variables.rem(24px);
+      line-height: variables.rem(34px);
+    }
+
+    p {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(34px);
+    }
+  }
+
+  @include media.for-laptop {
+    .page-content {
+      margin-top: variables.rem(60px);
+    }
+
+    h1 {
+      max-width: variables.rem(498px);
+      font-size: variables.rem(32px);
+      line-height: variables.rem(45px);
+    }
+
+    ul,
+    p {
+      margin-top: variables.rem(32px);
+    }
+
+    p {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(38px);
+    }
+  }
+
+  @include media.for-desktop {
+    .page-content {
+      margin-top: variables.rem(80px);
+    }
+
+    h1 {
+      max-width: variables.rem(740px);
+      font-size: variables.rem(48px);
+      line-height: variables.rem(67px);
+    }
+
+    ul,
+    p {
+      margin-top: variables.rem(40px);
+    }
+
+    p {
+      margin-top: variables.rem(40px);
+      font-size: variables.rem(21px);
+      line-height: variables.rem(50px);
+    }
+  }
+}

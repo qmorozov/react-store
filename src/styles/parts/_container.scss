@@ -1,0 +1,42 @@
+@use "src/styles/mixin/media" as media;
+
+[class*='-container'], .container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include media.for-mobile {
+    max-width: 373px;
+  }
+
+  @include media.for-tablet {
+    max-width: 960px;
+  }
+
+  @include media.for-laptop {
+    max-width: 1200px;
+  }
+
+  @include media.for-desktop {
+    max-width: 1824px;
+  }
+
+  &.--small {
+    @include media.for-mobile {
+      max-width: 373px;
+    }
+
+    @include media.for-tablet {
+      max-width: 640px;
+    }
+
+    @include media.for-laptop {
+      max-width: 800px;
+    }
+
+    @include media.for-desktop {
+      max-width: 1215px;
+    }
+  }
+
+}

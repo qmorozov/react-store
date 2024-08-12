@@ -1,0 +1,19 @@
+.accordion__header {
+  user-select: none;
+  cursor: pointer;
+
+  i {
+    display: block;
+    width: fit-content;
+    transition: transform .3s ease-in-out;
+  }
+
+  &.--open i {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion__content {
+  overflow: hidden;
+  transition: height .6s ease-in-out, border-bottom-color 0.3s ease-in-out;
+}

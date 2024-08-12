@@ -1,0 +1,75 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.often-buy {
+  &-container {
+    margin-top: variables.rem(32px);
+
+    .slider__button-next,
+    .slider__button-prev {
+      top: 40%;
+    }
+  }
+
+  &__card {
+    max-width: variables.rem(144px);
+
+    img {
+      margin: 0 auto;
+      max-height: variables.rem(110px);
+      max-width: variables.rem(140px);
+      object-fit: contain;
+      user-select: none;
+      transition: filter .3s ease-in-out;
+    }
+
+    span {
+      display: block;
+      margin-top: variables.rem(32px);
+      font-size: variables.rem(12px);
+      font-weight: variables.$fw-light;
+      line-height: variables.rem(18px);
+      letter-spacing: .01em;
+      max-width: variables.rem(200px);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+      transition: color .3s ease-in-out;
+      user-select: none;
+    }
+
+    &:hover {
+      img {
+        filter: brightness(.85);
+      }
+
+      span {
+        color: darken(variables.$dark, 100%);
+      }
+    }
+  }
+
+  @include media.for-laptop {
+    &__card span {
+      margin-top: variables.rem(38px);
+      line-height: variables.rem(20px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__card {
+      max-width: variables.rem(226px);
+
+      img {
+        max-width: variables.rem(210px);
+      }
+
+      span {
+        font-size: variables.rem(16px);
+        font-weight: variables.$fw-regular;
+        line-height: variables.rem(29px);
+      }
+    }
+  }
+}

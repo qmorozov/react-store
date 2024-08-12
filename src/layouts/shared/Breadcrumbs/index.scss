@@ -1,0 +1,102 @@
+@use "@style/_variables" as variables;
+@use "@style/mixin/_media" as media;
+
+.breadcrumbs {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: variables.rem(16px);
+    row-gap: variables.rem(5px);
+  }
+
+  &__item {
+    position: relative;
+    padding-left: variables.rem(22px);
+    font-size: variables.rem(12px);
+    font-weight: variables.$fw-light;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      content: '';
+      width: variables.rem(5px);
+      height: 1px;
+      background-color: variables.$dark;
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .icon-home {
+      font-size: variables.rem(10px);
+      transition: color .2s ease-in-out;
+    }
+
+    &.--current-page {
+      cursor: initial;
+      pointer-events: none;
+    }
+
+    a {
+      transition: color .2s ease-in-out;
+
+      &:hover,
+      .icon-home:hover {
+        color: lighten(variables.$dark, 40%);
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    &-container {
+      margin-top: variables.rem(24px);
+    }
+  }
+
+  @include media.for-tablet {
+    &-container {
+      margin-top: variables.rem(40px);
+    }
+  }
+
+  @include media.for-laptop {
+    &-container {
+      margin-top: variables.rem(32px);
+    }
+
+    &__item {
+      font-size: variables.rem(12px);
+      line-height: variables.rem(20px);
+    }
+  }
+
+  @include media.for-desktop {
+    &-container {
+      margin-top: variables.rem(40px);
+    }
+
+    &__list {
+      column-gap: variables.rem(30px);
+    }
+
+    &__item {
+      padding-left: variables.rem(30px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(26px);
+
+      .icon-home {
+        font-size: variables.rem(12px);
+      }
+    }
+  }
+}

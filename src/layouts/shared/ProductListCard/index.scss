@@ -1,0 +1,337 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.product-list-card {
+  position: relative;
+  display: block;
+  border-top: variables.rem(3px) solid #f9f9f9;
+  border-bottom: variables.rem(3px) solid #f9f9f9;
+
+  &.--hide &__photo {
+    opacity: 0.5;
+  }
+
+  & + & {
+    border-top-color: transparent;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    flex-shrink: 0;
+    user-select: none;
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &a[href]:not(div) {
+      filter: brightness(0.9);
+    }
+  }
+
+  &__info {
+    font-size: variables.rem(13px);
+    line-height: variables.rem(29px);
+  }
+
+  &_title {
+    font-weight: variables.$fw-semi-bold;
+  }
+
+  &__description,
+  &_title {
+    display: block;
+    word-break: break-word;
+    transition: color 0.3s ease-in-out;
+
+    &a[href]:not(div) {
+      color: lighten(variables.$dark, 50%);
+    }
+  }
+
+  &__year {
+    font-weight: variables.$fw-light;
+    user-select: none;
+  }
+
+  &__price {
+    display: flex;
+    width: fit-content;
+    font-weight: variables.$fw-semi-bold;
+    user-select: none;
+
+    &-currency {
+      display: block;
+      margin-left: variables.rem(2px);
+      font-size: variables.rem(10px);
+      line-height: variables.rem(10px);
+    }
+  }
+
+  &__like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: variables.rem(36px);
+    height: variables.rem(36px);
+    cursor: pointer;
+    border-radius: 100%;
+    transition: background-color 0.3s ease-in-out;
+
+    i {
+      font-size: variables.rem(16px);
+      color: #a3a3a3;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &.--liked {
+      background-color: variables.$primary;
+
+      i {
+        color: #fff;
+      }
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: fit-content;
+
+    &-bottom {
+      display: flex;
+      align-items: center;
+      column-gap: variables.rem(45px);
+      margin-top: variables.rem(24px);
+    }
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: variables.rem(16px);
+    margin-bottom: variables.rem(31px);
+
+    p {
+      opacity: 0.75;
+    }
+
+    span,
+    p {
+      user-select: none;
+      font-size: variables.rem(16px);
+      line-height: variables.rem(19px);
+    }
+
+    span {
+      max-width: variables.rem(10px);
+      width: 100%;
+    }
+
+    &-btn {
+      display: flex;
+      gap: variables.rem(8px);
+      margin-left: variables.rem(6px);
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: variables.rem(28px);
+      height: variables.rem(28px);
+      user-select: none;
+      border-radius: 100%;
+      transition: opacity 0.3s ease-in-out;
+
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+
+      &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .--minus {
+      background-color: rgba(variables.$dark, 0.04);
+    }
+
+    .--plus {
+      color: variables.$primary;
+      border: variables.rem(1px) solid variables.$primary;
+    }
+  }
+
+  &__actions {
+    justify-content: flex-end;
+
+    &-header {
+      display: contents;
+    }
+
+    &.--several-header-btn &-header {
+      display: flex;
+      gap: variables.rem(8px);
+      margin-bottom: auto;
+    }
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(32px) 0;
+
+    &__switch {
+      margin-bottom: variables.rem(16px);
+    }
+
+    &__photo,
+    &__info {
+      max-width: variables.rem(171px);
+    }
+
+    &__info {
+      margin-top: variables.rem(16px);
+    }
+
+    &__price {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(16px);
+    }
+
+    &__actions {
+      display: flex;
+      column-gap: variables.rem(6px);
+      margin-top: variables.rem(32px);
+
+      .btn {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      &.--several-footer-btn .btn {
+        //width: 50%;
+      }
+
+      button + button {
+        right: variables.rem(57px);
+      }
+    }
+
+    &__quantity {
+      margin-bottom: variables.rem(10px);
+    }
+  }
+
+  @include media.for-tablet {
+    display: flex;
+    justify-content: space-between;
+    gap: variables.rem(10px);
+    padding: variables.rem(24px) 0;
+
+    &__switch {
+      margin-bottom: variables.rem(24px);
+    }
+
+    &__photo {
+      max-width: variables.rem(199px);
+    }
+
+    &__info {
+      margin: auto;
+      max-width: variables.rem(198px);
+    }
+
+    &__price {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(18px);
+    }
+
+    &__actions {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      align-items: flex-end;
+      row-gap: variables.rem(8px);
+      width: 100%;
+      max-width: variables.rem(159px);
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media.for-laptop {
+    gap: variables.rem(52px);
+    padding: variables.rem(32px) 0;
+
+    &__switch {
+      margin-bottom: variables.rem(32px);
+    }
+
+    &__info {
+      max-width: variables.rem(300px);
+    }
+
+    &__info-bottom {
+      margin-top: variables.rem(32px);
+    }
+
+    &__actions {
+      max-width: variables.rem(199px);
+    }
+  }
+
+  @include media.for-desktop {
+    column-gap: variables.rem(79px);
+
+    &__photo,
+    &__actions {
+      max-width: variables.rem(303px);
+    }
+
+    &__info {
+      max-width: variables.rem(340px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(42px);
+    }
+
+    &__price {
+      font-size: variables.rem(22px);
+      line-height: variables.rem(25px);
+
+      &-currency {
+        font-size: variables.rem(16px);
+        line-height: variables.rem(16px);
+      }
+    }
+
+    &__like {
+      font-size: variables.rem(18px);
+    }
+
+    &__delete-btn {
+      width: variables.rem(72px);
+      height: variables.rem(72px);
+
+      .icon-garbage {
+        font-size: variables.rem(18px);
+      }
+    }
+
+    &__info__bottom {
+      column-gap: variables.rem(59px);
+    }
+  }
+}
+
+.summary-loader {
+  top: variables.rem(78px);
+}

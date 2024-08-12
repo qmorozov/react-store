@@ -1,0 +1,182 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+@import "../../../layouts/shared/BlogCard/index";
+
+.popular-models-container {
+  @include media.for-mobile {
+    margin-top: variables.rem(156px);
+
+    .slider__button-next,
+    .slider__button-prev {
+      top: 23%;
+    }
+  }
+
+  @include media.for-tablet {
+    margin-top: variables.rem(251px);
+
+    .slider__button-next,
+    .slider__button-prev {
+      top: 30%;
+    }
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(204px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(244px);
+  }
+}
+
+.model-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: variables.rem(24px);
+  overflow: hidden;
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #E6E6E6;
+    user-select: none;
+    transition: background-color .3s ease-in-out;
+
+    img {
+      object-fit: contain;
+      transition: transform .3s ease-in-out;
+    }
+
+    &:hover {
+      background: darken(#E6E6E6, 10%);
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__info {
+    font-size: variables.rem(13px);
+    line-height: variables.rem(29px);
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    &-title {
+      display: block;
+      max-width: 90%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: variables.$fw-semi-bold;
+    }
+
+    p {
+      display: block;
+      max-width: 90%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-type {
+      font-weight: variables.$fw-light;
+    }
+
+    &:hover {
+      color: lighten(variables.$dark, 20%);
+    }
+  }
+
+  &__price {
+    display: flex;
+    margin-left: variables.rem(2px);
+    font-weight: variables.$fw-semi-bold;
+
+    &-currency {
+      display: block;
+      margin-left: variables.rem(2px);
+      font-size: variables.rem(10px);
+      line-height: variables.rem(10px);
+    }
+  }
+
+  @include media.for-mobile {
+    max-width: variables.rem(171px);
+
+    &__img {
+      height: variables.rem(171px);
+
+      img {
+        width: variables.rem(70px);
+        height: variables.rem(70px);
+      }
+    }
+
+    &__price {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(16px);
+    }
+  }
+
+  @include media.for-tablet {
+    max-width: variables.rem(319px);
+
+    &__img {
+      height: variables.rem(319px);
+
+      img {
+        width: variables.rem(80px);
+        height: variables.rem(80px);
+      }
+    }
+
+    &__price {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(18px);
+    }
+  }
+
+  @include media.for-laptop {
+    max-width: variables.rem(298px);
+
+    &__img {
+      height: variables.rem(298px);
+
+      img {
+        width: variables.rem(90px);
+        height: variables.rem(90px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    max-width: variables.rem(454px);
+    row-gap: variables.rem(40px);
+
+    &__img {
+      height: variables.rem(454px);
+
+      img {
+        width: variables.rem(110px);
+        height: variables.rem(110px);
+      }
+    }
+
+    &__info {
+      font-size: variables.rem(15px);
+      line-height: variables.rem(39px);
+    }
+
+    &__price {
+      margin-top: variables.rem(16px);
+      font-size: variables.rem(22px);
+      line-height: variables.rem(40px);
+    }
+  }
+}

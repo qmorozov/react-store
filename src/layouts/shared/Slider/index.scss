@@ -1,0 +1,236 @@
+@use "@style/variables" as variables;
+@use "@style/mixin/media" as media;
+
+.slider {
+  position: relative;
+
+  [class*='-slider-inner'],
+  &-inner {
+    overflow: hidden;
+  }
+
+  .slider__items {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .slider__item {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .slider__button-next,
+  .slider__button-prev {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: variables.rem(56px);
+    height: variables.rem(56px);
+    background-color: rgba(variables.$lightGrey, .8);
+    backdrop-filter: blur(variables.rem(12.5px));
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+    transition: background-color .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+    .icon-arrow {
+      font-size: variables.rem(6px);
+    }
+
+    &.--disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      background-color: lighten(variables.$lightGrey, 3%);
+    }
+  }
+
+  .slider__button-next {
+    right: variables.rem(-28px);
+    left: auto;
+
+    .icon-arrow {
+      transform: rotate(270deg);
+    }
+  }
+
+  .slider__button-prev {
+    left: variables.rem(-28px);
+    right: auto;
+
+    .icon-arrow {
+      transform: rotate(-270deg);
+    }
+  }
+
+  .slider__pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &.swiper-pagination-progressbar {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      height: variables.rem(1px);
+      width: 100%;
+      background: none;
+    }
+
+    & .--progressbar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: variables.$dark;
+      transform-origin: left top;
+    }
+  }
+
+  .slider__all-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: variables.rem(13px);
+    font-weight: variables.$fw-medium;
+    line-height: variables.rem(16px);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    border-radius: 100%;
+    border: variables.rem(1px) solid variables.$dark;
+    background-color: white;
+    cursor: pointer;
+    transition: color .3s ease-in-out, border-color .3s ease-in-out;
+
+    &:hover {
+      color: lighten(variables.$dark, 35%);
+      border-color: lighten(variables.$dark, 35%);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: variables.rem(2px);
+    margin-bottom: variables.rem(40px);
+    overflow: auto;
+    text-align: center;
+
+    a,
+    button {
+      flex-shrink: 0;
+    }
+  }
+
+  @include media.for-mobile {
+    .slider__items {
+      padding-bottom: variables.rem(64px);
+    }
+
+    .slider__button-prev,
+    .slider__button-next {
+      top: calc(50% - 64px);
+    }
+
+    .slider__all-button {
+      right: variables.rem(-60px);
+      bottom: variables.rem(-60px);
+      width: variables.rem(120px);
+      height: variables.rem(120px);
+    }
+
+    &__buttons a, button {
+      flex-basis: variables.rem(171px);
+    }
+  }
+
+  @include media.for-tablet {
+    .slider__items {
+      padding-bottom: variables.rem(56px);
+    }
+
+    .slider__button-next,
+    .slider__button-prev {
+      top: calc(50% - 56px);
+    }
+
+    .slider__all-button {
+      right: variables.rem(-68px);
+      bottom: variables.rem(-68px);
+      width: variables.rem(136px);
+      height: variables.rem(136px);
+    }
+
+    &__buttons a, button {
+      flex-basis: variables.rem(154px);
+    }
+  }
+
+  @include media.for-laptop {
+    .slider__button-next,
+    .slider__button-prev {
+      width: variables.rem(64px);
+      height: variables.rem(64px);
+
+      .icon-arrow {
+        font-size: variables.rem(8px);
+      }
+    }
+
+    .slider__button-next {
+      right: variables.rem(-32px);
+    }
+
+    .slider__button-prev {
+      left: variables.rem(-32px);
+    }
+
+    &__buttons {
+      margin-bottom: variables.rem(60px);
+
+      a,
+      button {
+        flex-basis: variables.rem(177px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    .slider__all-button {
+      right: variables.rem(-93px);
+      bottom: variables.rem(-93px);
+      width: variables.rem(186px);
+      height: variables.rem(186px);
+      font-size: variables.rem(14px);
+      line-height: variables.rem(25px);
+    }
+
+    .slider__button-next,
+    .slider__button-prev {
+      width: variables.rem(88px);
+      height: variables.rem(88px);
+    }
+
+    .slider__button-next {
+      right: variables.rem(-44px);
+    }
+
+    .slider__button-prev {
+      left: variables.rem(-44px);
+    }
+
+    &__buttons {
+      margin-bottom: variables.rem(56px);
+
+      a,
+      button {
+        flex-basis: variables.rem(216px);
+      }
+    }
+  }
+}

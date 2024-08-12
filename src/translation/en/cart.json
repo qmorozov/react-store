@@ -1,0 +1,13 @@
+{
+  "Cart": "Cart",
+  "StartAChat": "Start a chat",
+  "SuggestAPrice": "Suggest a price",
+  "TotalWithDelivery": "Total with delivery",
+  "Checkout": "Checkout",
+  "YourCartIsEmpty": "Your cart is empty",
+  "JumpToProducts": "Jump to products",
+  "noInfo": {
+    "title": "You don't have any items in your cart",
+    "subTitle": "Start adding items to your cart"
+  }
+}

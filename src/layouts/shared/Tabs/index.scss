@@ -1,0 +1,170 @@
+@use '@style/variables' as variables;
+@use '@style/mixin/media' as media;
+
+.tabs {
+  margin-top: variables.rem(40px);
+
+  @include media.for-mobile {
+    &__content {
+      margin-top: variables.rem(56px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__content {
+      margin-top: variables.rem(64px);
+    }
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(64px);
+
+    &__content {
+      margin-top: variables.rem(96px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__content {
+      margin-top: variables.rem(72px);
+    }
+  }
+}
+
+.tabs > .tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: variables.rem(6px);
+  justify-content: center;
+
+  & > button {
+    position: relative;
+    padding: variables.rem(15px) variables.rem(6px);
+    user-select: none;
+    background-color: #f4f5f5;
+    color: #7a7a7a;
+    opacity: 0.7;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease;
+
+    &::before {
+      position: absolute;
+      bottom: variables.rem(-1px);
+      left: 50%;
+      content: '';
+      opacity: 0;
+      width: variables.rem(16px);
+      height: variables.rem(6px);
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='6' viewBox='0 0 16 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M16 6L0 6C7.78947 5.52632 8 0 8 0C8 0 8.21053 5.52632 16 6Z' fill='white'/%3e%3c/svg%3e ");
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:not([disabled]) {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    &[data-headlessui-state='selected']:not([disabled]),
+    &:hover:not([disabled]) {
+      color: #fff;
+      background-color: variables.$primary;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    & > button {
+      flex-basis: fit-content;
+      font-size: variables.rem(12px);
+      line-height: variables.rem(20px);
+    }
+  }
+
+  @include media.for-tablet {
+    & > button {
+      flex-basis: variables.rem(130px);
+      font-size: variables.rem(13px);
+      line-height: variables.rem(22px);
+    }
+  }
+
+  @include media.for-laptop {
+    & > button {
+      flex-basis: variables.rem(140px);
+    }
+  }
+
+  @include media.for-desktop {
+    gap: variables.rem(12px);
+
+    & > button {
+      flex-basis: variables.rem(155px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(29px);
+    }
+  }
+}
+
+.sub-tabs {
+  & > .tabs__list {
+    display: flex;
+    justify-content: center;
+    padding: variables.rem(8px);
+    background-color: #ebebeb;
+
+    & > button {
+      display: block;
+      flex-basis: 50%;
+      padding: variables.rem(5px) variables.rem(10px);
+      font-size: variables.rem(13px);
+      line-height: variables.rem(22px);
+      text-align: center;
+      color: variables.$fullBlack;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &[data-headlessui-state='selected']:not([disabled]) {
+        background-color: #fff;
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    & > .tabs__content {
+      margin-top: variables.rem(56px);
+    }
+  }
+
+  @include media.for-tablet {
+    & > .tabs__content {
+      margin-top: variables.rem(64px);
+    }
+  }
+
+  @include media.for-laptop {
+    & > button {
+      padding: variables.rem(8px) variables.rem(14px);
+      font-size: variables.rem(14px);
+      line-height: variables.rem(24px);
+    }
+
+    & > .tabs__content {
+      margin-top: variables.rem(96px);
+    }
+  }
+
+  @include media.for-desktop {
+    & > button {
+      padding: variables.rem(10px) variables.rem(18px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(29px);
+    }
+
+    & > .tabs__content {
+      margin-top: variables.rem(72px);
+    }
+  }
+}

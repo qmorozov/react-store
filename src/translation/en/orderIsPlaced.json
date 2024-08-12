@@ -1,0 +1,21 @@
+{
+  "YourOrderHasBeenPlaced": "Your order has",
+  "YourOrderHasBeenPlacedSpan": "been placed!",
+  "ExperienceQuestion": "How was your experience? Leave a review",
+  "PurchaseInfo": "We sent all the purchase information to ",
+  "LeaveReview": "It was...",
+  "LeaveReviewButton": "Leave a review",
+  "EditReviewButton": "Edit review",
+  "ContinueShopping": "Continue shopping",
+  "Message": "Go to messages",
+  "JustNow": "Just Now",
+  "Confirmation": "After confirmation",
+  "myOrders": "My orders",
+  "reviewWasAddedSuccessfully": "Review was added successfully",
+  "reviewWasEditedSuccessfully": "Review was edited successfully",
+  "leaveReviewFor": "Leave review for",
+  "Pending": "Pending",
+  "Processing": "Currently being processed",
+  "Shipped": "Shipped for delivery",
+  "Delivered": "Delivered"
+}

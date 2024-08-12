@@ -1,0 +1,37 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.star-rating {
+  display: flex;
+
+  button {
+    cursor: pointer;
+
+    svg {
+      width: variables.rem(24px);
+      height: variables.rem(24px);
+      fill: transparent;
+      stroke: variables.$fullBlack;
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &.--on svg {
+      fill: variables.$primary;
+      stroke: variables.$primary;
+    }
+  }
+
+  @include media.for-laptop {
+    button svg {
+      width: variables.rem(32px);
+      height: variables.rem(32px);
+    }
+  }
+
+  @include media.for-desktop {
+    button svg {
+      width: variables.rem(48px);
+      height: variables.rem(48px);
+    }
+  }
+}

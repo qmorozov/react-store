@@ -1,0 +1,73 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+.profile-container {
+  transition: opacity 0.3s ease-in-out;
+
+  &.--sending {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .btn {
+    text-align: left;
+  }
+
+  .profile__add-image {
+    margin-top: variables.rem(40px);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: variables.rem(24px);
+  }
+
+  @include media.for-mobile {
+    .profile__see-profile-btn {
+      margin-top: variables.rem(32px);
+    }
+
+    form {
+      margin-top: variables.rem(22px);
+    }
+  }
+
+  @include media.for-tablet {
+    .profile__see-profile-btn {
+      margin-top: variables.rem(39px);
+    }
+
+    form {
+      margin-top: variables.rem(26px);
+    }
+
+    .btn {
+      padding: variables.rem(16px) variables.rem(40px);
+    }
+  }
+
+  @include media.for-laptop {
+    .profile__see-profile-btn {
+      margin-top: variables.rem(40px);
+    }
+
+    form {
+      gap: variables.rem(32px);
+      margin-top: variables.rem(30px);
+    }
+  }
+
+  @include media.for-desktop {
+    .profile__see-profile-btn {
+      margin-top: variables.rem(64px);
+    }
+
+    form {
+      gap: variables.rem(40px);
+      margin-top: variables.rem(30px);
+    }
+  }
+}

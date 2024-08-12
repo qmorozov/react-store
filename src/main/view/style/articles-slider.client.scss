@@ -1,0 +1,28 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.articles-container {
+  margin-top: variables.rem(120px);
+
+  .slider__button-next,
+  .slider__button-prev {
+    top: 27%;
+  }
+
+  @include media.for-tablet {
+    margin-top: variables.rem(200px);
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(176px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(288px);
+
+    .slider__button-next,
+    .slider__button-prev {
+      top: 31%;
+    }
+  }
+}

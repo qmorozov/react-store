@@ -1,0 +1,32 @@
+{
+  "SellMyProduct": "Продати мій продукт",
+  "AddMyShop": "Додати мій магазин",
+  "EditMyShop": "Редагувати мій магазин",
+  "PrivacyPolicy": "Політика конфіденційності",
+  "Terms&Conditions": "Правила та умови",
+  "Selling": {
+    "title": "Продажа",
+    "EstimateMyProduct": "Оцініть мій продукт",
+    "SellMyProduct": "Продати мій продукт",
+    "CreateMyShop": "Створити мій магазин",
+    "AdviceForSellers": "Поради для продавців",
+    "Pricing": "Ціна"
+  },
+  "Buyer": {
+    "title": "Покупець",
+    "DeliveryAndPayment": "Доставка та оплата",
+    "Guarantees": "Гарантії",
+    "ReturnPolicy": "Політика повернення",
+    "SafetyRules": "Safety rules",
+    "PagesHelp": "Pages help"
+  },
+  "About": {
+    "title": "Про",
+    "Company": "Компанія",
+    "Contacts": "Контакти",
+    "FAQ": "Поширені питання"
+  },
+  "Settings": {
+    "title": "Налаштування"
+  }
+}

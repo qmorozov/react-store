@@ -1,0 +1,18 @@
+{
+  "title": "Обліковий запис",
+  "seeMyProfilePage": "Переглянути сторінку мого профілю",
+  "saveChanges": "Зберегти зміни",
+  "addProfileLogo": "Додати лого профілю",
+  "phone": "Номер телефон",
+  "currentPassword": "Поточний пароль",
+  "newPassword": "Новий пароль",
+  "description": "Опис",
+  "email": "Пошта",
+  "lastName": "Прізвище",
+  "firstName": "Імʼя",
+  "wrongPassword": "Не вірний пароль",
+  "profileWasEditedSuccessfully": "Профіль було успішно відредаговано",
+  "profileLogoWasDeletedSuccessfully": "Логотип профілю успішно видалено",
+  "newPasswordMismatch": "Новий пароль збігається з попереднім",
+  "currentPasswordIsRequired": "Поточний пароль потрібно вказати при наданні нового пароля"
+}

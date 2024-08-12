@@ -1,0 +1,328 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+/* ==== Modules ==== */
+@import 'react-toastify/dist/ReactToastify.css';
+
+@import '../../../layouts/shared/Loader/index.scss';
+
+
+.manage-product__price {
+  display: flex;
+  flex-direction: column;
+  gap: variables.rem(24px);
+  user-select: none;
+
+  &-wrapper {
+    display: flex;
+    align-items: flex-end;
+
+    .btn {
+      margin: 0 !important;
+      width: 100%;
+      padding: variables.rem(18px);
+      justify-content: center !important;
+      max-width: variables.rem(302px);
+      border-color: variables.$primary;
+      color: variables.$primary;
+    }
+
+    & > div {
+      display: contents;
+    }
+  }
+
+  .form-label {
+    width: 100%;
+  }
+
+  &.--suggest-price-block .form-label {
+    max-width: variables.rem(303px);
+    margin-right: variables.rem(32px);
+  }
+
+  &-rec {
+    flex-shrink: 0;
+    margin-right: variables.rem(110px);
+
+    p {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(19px);
+      color: rgba(variables.$dark, 0.75);
+    }
+
+    span {
+      display: flex;
+      align-items: flex-start;
+      font-weight: variables.$fw-semi-bold;
+      font-size: variables.rem(22px);
+      line-height: variables.rem(40px);
+
+      i {
+        font-style: normal;
+        display: block;
+        margin-left: variables.rem(2px);
+        font-size: variables.rem(14px);
+        line-height: variables.rem(30px);
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    gap: variables.rem(10px);
+
+    .form-label {
+      margin-right: 0;
+      max-width: 100%;
+    }
+
+    &-rec {
+      margin-right: 0;
+      flex-basis: 50%;
+
+      p {
+        font-size: variables.rem(12px);
+        line-height: variables.rem(16px);
+      }
+
+      span {
+        font-size: variables.rem(18px);
+        line-height: variables.rem(28px);
+
+        i {
+          font-size: variables.rem(12px);
+          line-height: variables.rem(26px);
+        }
+      }
+    }
+
+    &-wrapper {
+      gap: variables.rem(18px);
+      flex-direction: column;
+
+      & > div {
+        width: 100%;
+        display: flex;
+        gap: variables.rem(16px);
+      }
+
+      .btn {
+        padding: variables.rem(10px);
+        flex-basis: 50%;
+        text-align: center !important;
+      }
+    }
+  }
+
+  @include media.for-tablet {
+    &-rec {
+      margin-right: variables.rem(40px);
+    }
+
+    .btn {
+      max-width: variables.rem(160px);
+    }
+  }
+
+  @include media.for-desktop {
+    .btn {
+      max-width: variables.rem(280px);
+    }
+  }
+}
+
+.manage-product-container {
+  transition: opacity 0.3s ease-in-out;
+
+  .icon-small-arrow {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    width: fit-content;
+    padding: variables.rem(10px);
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 50%;
+    }
+  }
+
+  &.--sub-product-form {
+    .manage-product__title {
+      margin: 0;
+    }
+  }
+
+  &.--sending-data {
+    opacity: 0.65;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .loader {
+    display: flex !important;
+    margin: 0 auto;
+    left: variables.rem(30px);
+    right: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: variables.rem(24px);
+  }
+
+  .btn {
+    margin-top: variables.rem(24px);
+    width: 100%;
+  }
+
+  .manage-product__save-btn {
+    display: block;
+  }
+
+  @include media.for-mobile {
+    .icon-small-arrow {
+      margin-top: variables.rem(52px);
+    }
+
+    .btn {
+      padding: variables.rem(17px) variables.rem(32px);
+    }
+
+    .manage-product__save-btn {
+      margin: variables.rem(16px) auto 0;
+    }
+  }
+
+  @include media.for-tablet {
+    .icon-small-arrow {
+      margin-top: variables.rem(68px);
+    }
+
+    .btn {
+      padding: variables.rem(17px) variables.rem(40px);
+    }
+
+    .manage-product__save-btn {
+      margin: variables.rem(18px) auto 0;
+    }
+  }
+
+  @include media.for-laptop {
+    .icon-small-arrow {
+      margin-top: variables.rem(66px);
+    }
+
+    form {
+      gap: variables.rem(32px);
+    }
+
+    .btn {
+      padding: variables.rem(20px) variables.rem(40px);
+      margin-top: variables.rem(32px);
+    }
+
+    .manage-product__save-btn {
+      margin: variables.rem(24px) auto 0;
+    }
+  }
+
+  @include media.for-desktop {
+    .icon-small-arrow {
+      margin-top: variables.rem(64px);
+    }
+
+    form {
+      gap: variables.rem(40px);
+    }
+
+    .btn {
+      margin-top: variables.rem(40px);
+    }
+  }
+}
+
+.product__categories {
+  display: flex;
+  flex-direction: column;
+  margin-top: variables.rem(64px);
+
+  div {
+    display: flex;
+    gap: variables.rem(8px);
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: variables.rem(21px) variables.rem(31px);
+    font-weight: variables.$fw-medium;
+    font-size: variables.rem(16px);
+    line-height: variables.rem(19px);
+    background-color: #f4f5f5;
+    cursor: pointer;
+    border: variables.rem(1px) solid transparent;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:hover,
+    &[data-headlessui-state='checked'],
+    &[data-headlessui-state='checked active'] {
+      background-color: transparent;
+      color: variables.$primary;
+      border-color: variables.$primary;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+      box-shadow: 0 0 0 variables.rem(2px) variables.$primary;
+    }
+  }
+
+  @include media.for-mobile {
+    margin-top: variables.rem(32px);
+
+    div {
+      gap: variables.rem(6px);
+    }
+
+    button {
+      padding: variables.rem(16px) variables.rem(24px);
+      font-size: variables.rem(12px);
+      line-height: variables.rem(14px);
+    }
+  }
+}
+
+.manage-product__save-btn {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: variables.rem(16px);
+  line-height: variables.rem(29px);
+  border-bottom: variables.rem(1px) solid variables.$primary;
+  color: variables.$primary;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+
+  &:hover {
+    color: darken(variables.$primary, 20%);
+    border-bottom-color: darken(variables.$primary, 20%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include media.for-mobile {
+    font-size: variables.rem(12px);
+    line-height: variables.rem(20px);
+  }
+}
+
+.manage-product__photo-loader {
+  top: 9px;
+}
+
+@import './summary/summary-tab';

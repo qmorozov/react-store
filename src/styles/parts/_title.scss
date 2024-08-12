@@ -1,0 +1,33 @@
+@use "src/styles/mixin/media" as media;
+@use "src/styles/variables" as variables;
+
+[class*='__title'], .title {
+  font-weight: variables.$fw-medium;
+  letter-spacing: -.02em;
+  text-align: center;
+  word-break: break-word;
+
+  @include media.for-mobile {
+    margin-top: variables.rem(52px);
+    font-size: variables.rem(20px);
+    line-height: variables.rem(28px);
+  }
+
+  @include media.for-tablet {
+    margin-top: variables.rem(68px);
+    font-size: variables.rem(22px);
+    line-height: variables.rem(31px);
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(66px);
+    font-size: variables.rem(24px);
+    line-height: variables.rem(34px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(64px);
+    font-size: variables.rem(32px);
+    line-height: variables.rem(45px);
+  }
+}

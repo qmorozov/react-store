@@ -1,0 +1,199 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import '../../../layouts/shared/ProductListCard';
+@import '../../../layouts/shared/SuggestPrice';
+
+.cart {
+  &-container .product-list-card {
+    border-top: none;
+  }
+
+  &__title {
+    margin-bottom: variables.rem(48px);
+  }
+
+  &__total {
+    padding-right: variables.rem(15px);
+    word-break: break-word;
+    font-weight: variables.$fw-medium;
+    font-size: variables.rem(16px);
+    line-height: variables.rem(22px);
+
+    span {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: variables.rem(-4px);
+        right: variables.rem(-8px);
+        font-style: normal;
+        font-size: variables.rem(10px);
+        line-height: variables.rem(14px);
+      }
+    }
+  }
+
+  &__result {
+    border-bottom: variables.rem(3px) solid #f9f9f9;
+  }
+
+  &__shop {
+    display: flex;
+    align-items: center;
+    font-weight: variables.$fw-light;
+    font-size: variables.rem(13px);
+    line-height: variables.rem(16px);
+
+    &-name {
+      margin-left: variables.rem(12px);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Times New Roman', sans-serif;
+      font-style: italic;
+      font-weight: variables.$fw-semi-bold;
+      font-size: variables.rem(11px);
+      line-height: variables.rem(18px);
+      width: variables.rem(16px);
+      height: variables.rem(16px);
+      background-color: #ef5da8;
+      color: #fff;
+      border-radius: 100%;
+      user-select: none;
+    }
+
+    &-rating {
+      margin-left: variables.rem(16px);
+      font-weight: variables.$fw-light;
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+      letter-spacing: 0.01em;
+
+      .icon-star {
+        margin-right: variables.rem(8px);
+        font-size: variables.rem(14px);
+        color: #a3a3a3;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: variables.rem(48px);
+  }
+
+  &__group {
+    border-top: variables.rem(3px) solid #f9f9f9;
+  }
+
+  @include media.for-mobile {
+    &__title {
+      margin-top: variables.rem(52px);
+    }
+
+    &__result {
+      display: flex;
+      flex-direction: column;
+      row-gap: variables.rem(32px);
+      padding: variables.rem(32px) 0;
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    &__shop-name {
+      max-width: variables.rem(150px);
+    }
+
+    &__total {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(22px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__title {
+      margin-top: variables.rem(68px);
+    }
+
+    &__shop-name {
+      max-width: variables.rem(100px);
+    }
+
+    &__result {
+      display: flex;
+      align-items: center;
+      padding: variables.rem(24px) 0;
+
+      .btn {
+        margin-left: auto;
+        width: 100%;
+        max-width: variables.rem(159px);
+      }
+    }
+
+    &__total {
+      margin-left: variables.rem(62px);
+      font-size: variables.rem(13px);
+      line-height: variables.rem(18px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__title {
+      margin: variables.rem(66px) 0 variables.rem(64px);
+    }
+
+    &__result .btn {
+      max-width: variables.rem(199px);
+    }
+
+    &__total {
+      margin-left: variables.rem(72px);
+      font-size: variables.rem(14px);
+      line-height: variables.rem(20px);
+
+      span i {
+        top: variables.rem(-6px);
+        right: variables.rem(-9px);
+        font-size: variables.rem(12px);
+        line-height: variables.rem(23px);
+      }
+    }
+
+    &__wrapper {
+      row-gap: variables.rem(64px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__title {
+      margin: variables.rem(61px) 0 variables.rem(96px);
+    }
+
+    &__result {
+      .btn {
+        max-width: variables.rem(303px);
+      }
+    }
+
+    &__total {
+      margin-left: variables.rem(203px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(42px);
+    }
+
+    &__wrapper {
+      row-gap: variables.rem(80px);
+    }
+  }
+}

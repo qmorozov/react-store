@@ -1,0 +1,49 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+@import '../../../../layouts/shared/ProductListCard';
+@import '../../../../layouts/shared/Switch/index.scss';
+
+.shop {
+  &-container > .btn {
+    width: 100%;
+    text-align: left;
+    margin: variables.rem(40px) auto 0;
+  }
+
+  @include media.for-mobile {
+    &__product-list {
+      margin-top: variables.rem(40px);
+    }
+  }
+
+  @include media.for-tablet {
+    &-container .btn {
+      max-width: variables.rem(318px);
+    }
+
+    &__product-list {
+      margin-top: variables.rem(64px);
+    }
+  }
+
+  @include media.for-laptop {
+    &-container .btn {
+      max-width: variables.rem(398px);
+    }
+
+    &__product-list {
+      margin-top: variables.rem(72px);
+    }
+  }
+
+  @include media.for-desktop {
+    &-container .btn {
+      max-width: variables.rem(606px);
+    }
+
+    &__product-list {
+      margin-top: variables.rem(79px);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+@import "../../../catalog/view/style/product-card.client";
+
+.popular-container {
+  .slider__button-next,
+  .slider__button-prev {
+    top: 22%;
+  }
+
+  @include media.for-mobile {
+    margin-top: variables.rem(96px);
+  }
+
+  @include media.for-tablet {
+    margin-top: variables.rem(140px);
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(136px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(159px);
+  }
+}

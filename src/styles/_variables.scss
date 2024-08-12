@@ -1,0 +1,43 @@
+@use 'sass:math' as math;
+
+// #EBEBEB // === checkbox ===
+// #DD4B39 // === google icon color ===
+// #55ACEE // === twitter icon color ===
+// #3B5998 // === facebook icon color ===
+// #DD4B39 // === youtube icon color ===
+// #ECECEC // === message input ===
+
+/* ==== Colors variables === */
+$dark: #333;
+$fullBlack: #141414;
+$primary: #0a9148;
+$lightGrey: #a3a3a3;
+
+/* ==== Font weight variables ==== */
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+/* ==== Mixin ==== */
+$breakpoints: (
+  'mobile': (
+    max-width: 1024px,
+  ),
+  'tablet': (
+    min-width: 1024px,
+  ),
+  'laptop': (
+    min-width: 1280px,
+  ),
+  'desktop': (
+    min-width: 1920px,
+  ),
+) !default;
+
+/* ==== pxl to rem ==== */
+@function rem($size) {
+  @return math.div($size, 16px) * 1rem;
+}

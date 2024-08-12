@@ -1,0 +1,48 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import 'confirmOrder';
+@import './checkoutItems';
+@import './checkoutForm';
+
+.checkout-container {
+  transition: opacity 0.3s ease-in-out;
+
+  &.--sending-data {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.contacts {
+  .select__content {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .select.--open .select__content ul {
+    height: 100%;
+    background-color: #fff;
+  }
+
+  @include media.for-mobile {
+    .select__content {
+      position: initial;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+}
+
+.delivery {
+  .input-default:first-of-type input:focus ~ p,
+  .input-default:first-of-type input:not(:placeholder-shown) ~ p {
+    top: variables.rem(20px);
+  }
+
+  .select.--open .select__content ul {
+    height: 100%;
+    background-color: #fff;
+  }
+}

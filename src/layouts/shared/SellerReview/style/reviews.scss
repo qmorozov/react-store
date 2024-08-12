@@ -1,0 +1,163 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.review {
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: variables.rem(12px);
+    padding-bottom: variables.rem(16px);
+    margin-bottom: variables.rem(16px);
+    border-bottom: .5px solid #7A7A7A;
+  }
+
+  /* ============================ */
+  &__user {
+    display: flex;
+    align-items: center;
+
+    &-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: variables.rem(16px);
+      width: variables.rem(32px);
+      height: variables.rem(32px);
+      font-weight: variables.$fw-medium;
+      font-size: variables.rem(10px);
+      line-height: variables.rem(12px);
+      border-radius: 100%;
+      user-select: none;
+      overflow: hidden;
+      background-color: rgba(variables.$primary, .3);
+    }
+
+    &-name {
+      max-width: variables.rem(150px);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: variables.$fw-medium;
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+    }
+  }
+  /* ============================ */
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    color: variables.$dark;
+
+    .icon-star {
+      font-size: variables.rem(12px);
+    }
+
+    span {
+      display: block;
+      margin-left: variables.rem(3px);
+      font-weight: variables.$fw-medium;
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+      user-select: none;
+    }
+  }
+
+  &__date {
+    font-size: variables.rem(12px);
+    line-height: variables.rem(15px);
+    color: #7A7A7A;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &__content {
+    font-size: variables.rem(12px);
+    line-height: variables.rem(24px);
+    letter-spacing: .01em;
+    word-break: break-word;
+  }
+
+  @include media.for-laptop {
+    &__header {
+      column-gap: variables.rem(16px);
+      padding-bottom: variables.rem(24px);
+      margin-bottom: variables.rem(24px);
+    }
+
+    /* ============================ */
+    &__user {
+      &-photo {
+        margin-right: variables.rem(24px);
+      }
+
+      &-name {
+        font-size: variables.rem(14px);
+        line-height: variables.rem(17px);
+      }
+    }
+    /* ============================ */
+
+    &__rating {
+      .icon-star {
+        font-size: variables.rem(14px);
+      }
+
+      span {
+        margin-left: variables.rem(4px);
+        font-size: variables.rem(14px);
+        line-height: variables.rem(17px);
+      }
+    }
+
+    &__date {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+    }
+
+    &__content {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(26px);
+    }
+  }
+
+  @include media.for-desktop {
+    /* ============================ */
+    &__user {
+      &-photo {
+        width: variables.rem(40px);
+        height: variables.rem(40px);
+        font-size: variables.rem(12px);
+        line-height: variables.rem(15px);
+      }
+
+      &-name {
+        font-size: variables.rem(16px);
+        line-height: variables.rem(19px);
+      }
+    }
+    /* ============================ */
+
+    &__rating {
+      .icon-star {
+        font-size: variables.rem(16px);
+      }
+
+      span {
+        margin-left: variables.rem(8px);
+        font-size: variables.rem(16px);
+        line-height: variables.rem(29px);
+      }
+    }
+
+    &__date {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(17px);
+    }
+
+    &__content {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(32px);
+    }
+  }
+}

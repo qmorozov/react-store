@@ -1,0 +1,14 @@
+@use "@style/variables" as variables;
+@use "@style/mixin/media" as media;
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: variables.rem(35px);
+  text-align: center;
+
+  .btn {
+    text-transform: uppercase;
+    text-align: left;
+  }
+}

@@ -1,0 +1,311 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.chat-input {
+  position: sticky;
+  bottom: 0;
+
+  .add-image {
+    display: contents;
+
+    &__items {
+      position: absolute;
+      top: variables.rem(-130px);
+      left: variables.rem(6px);
+      padding: variables.rem(8px) variables.rem(8px) 0;
+      flex-wrap: nowrap;
+      overflow-y: auto;
+    }
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: text;
+    column-gap: variables.rem(20px);
+
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 1px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      z-index: -1;
+      background-color: #ececec;
+    }
+  }
+
+  button {
+    transition: opacity 0.3s ease-in-out;
+
+    i {
+      font-size: variables.rem(14px);
+      color: variables.$fullBlack;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: lighten(variables.$fullBlack, 40%);
+      }
+    }
+
+    &[disabled] {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    font-style: italic;
+    font-weight: variables.$fw-light;
+    letter-spacing: 0.02em;
+    color: variables.$fullBlack;
+    background: none;
+    border: none;
+    resize: none;
+
+    &::placeholder {
+      font-style: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      user-select: none;
+    }
+  }
+
+  label {
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    i {
+      font-size: variables.rem(16px);
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: lighten(variables.$fullBlack, 40%);
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    form {
+      padding: variables.rem(20px) variables.rem(24px);
+    }
+
+    textarea {
+      height: variables.rem(14px);
+      font-size: variables.rem(14px);
+      line-height: variables.rem(14px);
+    }
+  }
+
+  @include media.for-tablet {
+    form {
+      padding: variables.rem(20px) variables.rem(32px);
+    }
+
+    textarea {
+      height: variables.rem(15px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(15px);
+    }
+  }
+
+  @include media.for-laptop {
+    form {
+      padding: variables.rem(23px) variables.rem(40px);
+      column-gap: variables.rem(40px);
+    }
+
+    button i {
+      font-size: variables.rem(16px);
+    }
+
+    textarea {
+      height: variables.rem(18px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(16px);
+    }
+
+    label i {
+      font-size: variables.rem(18px);
+    }
+  }
+
+  @include media.for-desktop {
+    form {
+      padding: variables.rem(32px) variables.rem(78px);
+    }
+
+    button i {
+      font-size: variables.rem(20px);
+    }
+
+    textarea {
+      height: variables.rem(22px);
+      font-size: variables.rem(18px);
+      line-height: variables.rem(22px);
+    }
+
+    label i {
+      font-size: variables.rem(22px);
+    }
+  }
+}
+
+.chat-input__images {
+  display: flex;
+  overflow-x: auto;
+
+  li {
+    position: relative;
+    flex-shrink: 0;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      background-color: variables.$primary;
+      border: variables.rem(1px) solid transparent;
+      transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      span {
+        display: block;
+        position: relative;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: variables.rem(1px);
+          background-color: #fff;
+          transform: translateY(-50%);
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: variables.$primary;
+          background-color: #fff;
+
+          span::before,
+          span::after {
+            background-color: variables.$primary;
+          }
+        }
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    gap: variables.rem(6px);
+    margin: 0 variables.rem(6px) variables.rem(6px) variables.rem(6px);
+
+    li {
+      width: variables.rem(90px);
+      height: variables.rem(90px);
+    }
+
+    button {
+      width: variables.rem(22px);
+      height: variables.rem(22px);
+
+      span {
+        width: variables.rem(8px);
+        height: variables.rem(8px);
+      }
+    }
+  }
+
+  @include media.for-tablet {
+    gap: variables.rem(8px);
+    margin: 0 variables.rem(8px) variables.rem(8px) variables.rem(8px);
+
+    li {
+      width: variables.rem(140px);
+      height: variables.rem(140px);
+    }
+
+    button {
+      width: variables.rem(28px);
+      height: variables.rem(28px);
+
+      span {
+        width: variables.rem(10px);
+        height: variables.rem(10px);
+      }
+    }
+  }
+
+  @include media.for-laptop {
+    gap: variables.rem(12px);
+    margin: 0 variables.rem(12px) variables.rem(12px) variables.rem(12px);
+
+    li {
+      width: variables.rem(160px);
+      height: variables.rem(160px);
+    }
+
+    button {
+      width: variables.rem(30px);
+      height: variables.rem(30px);
+
+      span {
+        width: variables.rem(12px);
+        height: variables.rem(12px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    gap: variables.rem(14px);
+    margin: 0 variables.rem(16px) variables.rem(16px) variables.rem(16px);
+
+    li {
+      width: variables.rem(200px);
+      height: variables.rem(200px);
+
+      button {
+        width: variables.rem(36px);
+        height: variables.rem(36px);
+
+        span {
+          width: variables.rem(14px);
+          height: variables.rem(14px);
+        }
+      }
+    }
+  }
+}

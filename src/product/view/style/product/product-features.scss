@@ -1,0 +1,24 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.product-features {
+  page-break-inside: avoid;
+  order: 1;
+
+  .list-info {
+    margin-top: 0 !important;
+  }
+
+  .product__subtitle {
+    display: block;
+    margin-bottom: variables.rem(40px);
+  }
+
+  &__heading {
+    display: block;
+    margin-bottom: variables.rem(24px);
+    font-weight: variables.$fw-semi-bold;
+    font-size: variables.rem(13px);
+    line-height: variables.rem(18px);
+  }
+}

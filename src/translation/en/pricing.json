@@ -1,0 +1,21 @@
+{
+  "subscriptionActive": "Your subscription is now active until",
+  "purchaseInfo": " We sent all the purchase information to",
+  "title": "Subscription",
+  "activeUntil": "Active Until",
+  "PerMonth": "Per month",
+  "PerYear": "Per year",
+  "MaxProducts": "Max products",
+  "AllTheBenefitsOfStandard": "All the benefits of Standard",
+  "10IndicatorsPerChart": "10 indicators per chart",
+  "4MoreChartsInOneLayout": "4 more charts in one layout",
+  "100ServerSideAlerts": "100 server-side alerts",
+  "Standard": "Standard",
+  "Pro+": "Pro+",
+  "Professional": "Professional",
+  "ExtendThePlan": "Extend the plan",
+  "Buy": "Buy",
+  "User": "User",
+  "Company": "Company",
+  "CreateCompany": "Create your company profile"
+}

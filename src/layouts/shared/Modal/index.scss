@@ -1,0 +1,89 @@
+@use '@style/variables' as variables;
+@use '@style/mixin/media' as media;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .4);
+
+  &__content {
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    border: variables.rem(1px) solid rgba(variables.$dark, 50%);
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: variables.rem(8px);
+      height: variables.rem(8px);
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: variables.rem(1px);
+        background-color: variables.$dark;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    &__close {
+      top: variables.rem(-12px);
+      right: variables.rem(-12px);
+      width: variables.rem(28px);
+      height: variables.rem(28px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__close {
+      top: variables.rem(-14px);
+      right: variables.rem(-14px);
+      width: variables.rem(32px);
+      height: variables.rem(32px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__close {
+      top: variables.rem(-18px);
+      right: variables.rem(-18px);
+      width: variables.rem(34px);
+      height: variables.rem(34px);
+    }
+  }
+}

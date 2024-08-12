@@ -1,0 +1,190 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.order-tracker {
+  &__progress {
+    overflow-x: scroll;
+  }
+
+  &__line {
+    padding: variables.rem(4px);
+    height: variables.rem(11px);
+    border-radius: variables.rem(55px);
+    background-color: variables.$fullBlack;
+
+    span {
+      display: block;
+      height: 100%;
+      background-color: #fff;
+      border-radius: variables.rem(55px);
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover::-webkit-scrollbar-thumb {
+        display: block;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    counter-reset: section;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: variables.rem(12px);
+      flex-shrink: 0;
+      user-select: none;
+      flex-grow: 1;
+
+      &::before {
+        counter-increment: section;
+        content: counter(section) '.';
+        font-size: variables.rem(11px);
+        line-height: variables.rem(18px);
+      }
+
+      &.--disabled {
+        color: #7a7a7a;
+      }
+    }
+  }
+
+  &__item {
+    &-title {
+      font-weight: variables.$fw-semi-bold;
+      font-size: variables.rem(13px);
+      line-height: variables.rem(18px);
+    }
+
+    &-status {
+      font-weight: variables.$fw-light;
+      font-size: variables.rem(11px);
+      line-height: variables.rem(18px);
+    }
+  }
+
+  @include media.for-mobile {
+    &__line {
+      width: variables.rem(660px);
+    }
+
+    &__items {
+      margin-top: variables.rem(56px);
+
+      ul:not(:first-child) {
+        padding-left: variables.rem(66px);
+      }
+    }
+  }
+
+  @include media.for-tablet {
+    &__line {
+      width: 100%;
+      height: variables.rem(11px);
+    }
+
+    &__items {
+      margin-top: variables.rem(64px);
+
+      ul:not(:first-child) {
+        padding-left: variables.rem(48px);
+      }
+    }
+  }
+
+  @include media.for-laptop {
+    &__line {
+      padding: variables.rem(5px);
+      height: variables.rem(14px);
+    }
+
+    &__items {
+      margin-top: variables.rem(72px);
+
+      ul {
+        gap: variables.rem(17px);
+
+        &:not(:first-child) {
+          padding-left: variables.rem(90px);
+        }
+
+        &::before {
+          font-size: variables.rem(13px);
+          line-height: variables.rem(22px);
+        }
+      }
+    }
+
+    &__item {
+      &-title {
+        font-size: variables.rem(14px);
+        line-height: variables.rem(20px);
+      }
+
+      &-status {
+        font-size: variables.rem(13px);
+        line-height: variables.rem(22px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    &__line {
+      height: variables.rem(16px);
+    }
+
+    &__items {
+      margin-top: variables.rem(80px);
+
+      ul {
+        gap: variables.rem(18px);
+
+        &:not(:first-child) {
+          padding-left: variables.rem(170px);
+        }
+
+        &::before {
+          font-size: variables.rem(16px);
+          line-height: variables.rem(28px);
+        }
+      }
+    }
+
+    &__item {
+      &-title {
+        font-size: variables.rem(18px);
+        line-height: variables.rem(25px);
+      }
+
+      &-status {
+        font-size: variables.rem(16px);
+        line-height: variables.rem(28px);
+      }
+    }
+  }
+}
+
+.order-tracker__line {
+  .--Pending {
+    width: 13%;
+  }
+
+  .--Processing {
+    width: 44%;
+  }
+
+  .--Shipped {
+    width: 70%;
+  }
+
+  .--Delivered {
+    width: 100%;
+  }
+}

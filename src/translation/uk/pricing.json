@@ -1,0 +1,21 @@
+{
+  "subscriptionActive": "Ваша підписка активна до",
+  "purchaseInfo": "Ми надіслали всю інформацію про покупку на адресу",
+  "title": "Підписка",
+  "activeUntil": "Активнa до",
+  "PerMonth": "На місяць",
+  "PerYear": "На рік",
+  "MaxProducts": "Макс. кількість продуктів",
+  "AllTheBenefitsOfStandard": "Усі переваги стандарту",
+  "10IndicatorsPerChart": "10 індикаторів на графіку",
+  "4MoreChartsInOneLayout": "Ще 4 діаграми в одному макеті",
+  "100ServerSideAlerts": "100 сповіщень на стороні сервера",
+  "Standard": "Стандарт",
+  "Pro+": "Про+",
+  "Professional": "Професіональний",
+  "ExtendThePlan": "Розширте план",
+  "Buy": "Придбати",
+  "User": "Користувач",
+  "Company": "Компанія",
+  "CreateCompany": "Створіть профіль вашої компанії"
+}

@@ -1,0 +1,136 @@
+@use '@style/variables' as variables;
+@use '@style/mixin/media' as media;
+
+.menu {
+  width: 100%;
+  height: 100%;
+
+  &__button-block {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: variables.rem(6px);
+  }
+
+  &__items {
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    margin-top: variables.rem(24px);
+    background-color: #fff;
+    transform-origin: top right;
+    border-radius: variables.rem(6px);
+    border-top-width: variables.rem(1px);
+    border-color: #f3f4f6;
+    box-shadow: 0 variables.rem(10px) variables.rem(15px) variables.rem(-3px) rgba(0, 0, 0, 0.1),
+      0 variables.rem(4px) variables.rem(6px) variables.rem(-2px) rgba(0, 0, 0, 0.05);
+  }
+
+  &__item-block {
+    padding: variables.rem(4px);
+    display: grid;
+  }
+
+  &__item-button {
+    display: block;
+    border-radius: variables.rem(6px);
+    padding: variables.rem(8px);
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .text-grey {
+    color: #111827;
+  }
+  .text-white {
+    color: #fff;
+  }
+  .bg-violet {
+    background-color: variables.$primary;
+  }
+}
+
+.header__button-account {
+  img {
+    border-radius: 50%;
+    height: variables.rem(20px);
+    width: variables.rem(20px);
+    margin: auto;
+  }
+}
+
+.account {
+  height: variables.rem(20px);
+  width: variables.rem(20px);
+  background-color: #d6d6d6;
+  border-radius: 100%;
+  display: flex;
+}
+
+@include media.for-mobile {
+  .menu {
+    &__items {
+      margin-top: variables.rem(24px);
+      width: variables.rem(160px);
+    }
+
+    &__item-button {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(15px);
+    }
+  }
+}
+
+@include media.for-tablet {
+  .menu {
+    &__items {
+      margin-top: variables.rem(24px);
+      width: variables.rem(180px);
+    }
+
+    &__item-button {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(18px);
+    }
+  }
+}
+
+@include media.for-laptop {
+  .menu {
+    &__items {
+      margin-top: variables.rem(24px);
+      width: variables.rem(200px);
+    }
+
+    &__item-button {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(18px);
+    }
+  }
+}
+
+@include media.for-desktop {
+  .menu {
+    &__items {
+      margin-top: variables.rem(24px);
+      width: variables.rem(224px);
+    }
+
+    &__item-button {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(20px);
+    }
+  }
+}

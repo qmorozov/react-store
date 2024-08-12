@@ -1,0 +1,100 @@
+{
+  "brand": "Бренд",
+  "price": "Ціна",
+  "year": "Рік",
+  "serialNumber": "Серійний номер",
+  "sex": "Стать",
+  "bag": {
+    "kind": "Вид",
+    "material": "Матеріал",
+    "style": "Стиль",
+    "color": "Колір",
+    "size": "Розмір",
+    "shape": "Форма",
+    "clasp": "Засіб закріплення"
+  },
+  "belt": {
+    "belt_length": "Довжина ременю",
+    "material": "Матеріал",
+    "clasp": "Засіб закріплення",
+    "color": "Колір",
+    "type": "Тип"
+  },
+  "bracelet": {
+    "material": "Матеріал",
+    "coating_color": "Колір покриття",
+    "stones": "Камені",
+    "size": "Розміри"
+  },
+  "coin": {
+    "material": "Матеріал",
+    "peculiarities": "Особливості",
+    "theme": "Тема",
+    "circulation": "Тираж",
+    "par": "Пар",
+    "origin": "Походження",
+    "state": "Стан",
+    "stateReward": "State reward",
+    "comesWithPacking": "Comes with packing"
+  },
+  "glasses": {
+    "lenses_color": "Колір лінз",
+    "frame_color": "Колір оправи",
+    "frame_material": "Матеріал оправи",
+    "frame_shape": "Форма оправи"
+  },
+  "necklace": {
+    "material": "Матеріал",
+    "coating_color": "Колір покриття",
+    "stones": "Камені",
+    "size": "Розміри"
+  },
+  "ring": {
+    "material": "Матеріал",
+    "coating_color": "Колір покриття",
+    "stoned": "Оправлення каменем",
+    "stones": "Камені",
+    "size": "Розміри"
+  },
+  "wallet": {
+    "material": "Матеріал",
+    "clasp": "Засіб закріплення",
+    "color": "Колір",
+    "number_of_compartments_for_bills": "Кількість карманів для купюр",
+    "number_of_compartments_for_cards": "Кількість карманів для карток"
+  },
+  "watch": {
+    "version": "Версія",
+    "body_material": "Матеріал корпусу",
+    "color_of_body": "Колір корпусу",
+    "coating": "Покриття",
+    "body_shape": "Форма корпусу",
+    "dial_color": "Колір циферблату",
+    "type_of_indication": "Тип показу",
+    "bracelet_or_strap": "Браслет чи ремінь",
+    "material": "Матеріал",
+    "mechanism_type": "Тип механізму",
+    "glass": "Скло",
+    "stone_inlay": "Вставка каменю",
+    "water_protection": "Захист від води",
+    "body_diameter": "Діаметр корпусу",
+    "height": "Height",
+    "width": "Width",
+    "customFeatures": "Custom features",
+    "customFeatures.tip": "Discover unique timepieces by checking the 'Custom Features' box in the search filters. This option unveils personalized watches adorned with distinctive jewellery and replaced elements, standing out from the ordinary. Select this option if you look for customized watches."
+  },
+  "diamond": {
+    "grown": "Grown",
+    "cut": "Cut",
+    "clarity": "Clarity",
+    "colorGrade": "Color grade",
+    "shape": "Shape",
+    "fluorescence": "Fluorescence",
+    "carat": "Carat",
+    "lwRatio": "L-W Ratio",
+    "table": "Table",
+    "cutScore": "Cut score",
+    "depth": "Depth",
+    "kind": "Kind"
+  }
+}

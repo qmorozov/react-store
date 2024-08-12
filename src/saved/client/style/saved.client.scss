@@ -1,0 +1,62 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+/* ==== Components ==== */
+@import '../../../catalog/view/style/product-card.client';
+
+.saved {
+  &-container .loader {
+    margin-top: variables.rem(100px);
+  }
+
+  &__items {
+    display: grid;
+    grid-column-gap: variables.rem(2px);
+  }
+
+  @include media.for-mobile {
+    &-container {
+      margin-top: variables.rem(52px);
+    }
+
+    &__items {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: variables.rem(40px);
+      margin-top: variables.rem(48px);
+    }
+  }
+
+  @include media.for-tablet {
+    &-container {
+      margin-top: variables.rem(68px);
+    }
+
+    &__items {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: variables.rem(48px);
+      margin-top: variables.rem(64px);
+    }
+  }
+
+  @include media.for-laptop {
+    &-container {
+      margin-top: variables.rem(66px);
+    }
+
+    &__items {
+      grid-template-columns: repeat(4, 1fr);
+      grid-row-gap: variables.rem(56px);
+      margin-top: variables.rem(96px);
+    }
+  }
+
+  @include media.for-desktop {
+    &-container {
+      margin-top: variables.rem(61px);
+    }
+
+    &__items {
+      grid-row-gap: variables.rem(64px);
+    }
+  }
+}

@@ -1,0 +1,323 @@
+@use '@style/variables' as variables;
+@use '@style/mixin/media' as media;
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  row-gap: variables.rem(24px);
+  overflow: hidden;
+
+  &__img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      user-select: none;
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  &__like {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    .icon-heart-fill {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(16px);
+      color: variables.$lightGrey;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &.--liked {
+      opacity: 1;
+      visibility: visible;
+      background-color: variables.$primary;
+
+      .icon-heart-fill {
+        color: #fff;
+        line-height: variables.rem(9px);
+      }
+    }
+
+    &:hover {
+      background-color: darken(variables.$primary, 5%);
+      color: #fff;
+
+      .icon-heart-fill {
+        color: #fff;
+      }
+    }
+  }
+
+  &:hover &__like {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    font-size: variables.rem(13px);
+    font-weight: variables.$fw-light;
+    line-height: variables.rem(16px);
+    letter-spacing: 0.01em;
+    user-select: none;
+    column-gap: variables.rem(26px);
+
+    &-seller {
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease-in-out;
+
+      .icon-star {
+        margin-right: variables.rem(12px);
+        transition: color 0.3s ease-in-out;
+      }
+
+      span {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &:hover,
+      &:hover .icon-star {
+        color: lighten(variables.$dark, 30%);
+      }
+    }
+
+    &-rating {
+      margin-right: variables.rem(30px);
+
+      .icon-star {
+        margin-right: variables.rem(8px);
+        color: variables.$lightGrey;
+      }
+    }
+  }
+
+  &__seller {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: variables.rem(18px);
+      height: variables.rem(18px);
+      background-color: #ef5da8;
+      border-radius: 100%;
+      font-family: 'Times New Roman', sans-serif;
+      font-style: italic;
+      color: #fff;
+    }
+  }
+
+  &__seller-image {
+    max-width: variables.rem(20px);
+    border-radius: 100%;
+  }
+
+  &__info {
+    max-width: variables.rem(210px);
+    padding-right: variables.rem(10px);
+    font-size: variables.rem(13px);
+    line-height: variables.rem(29px);
+    transition: color 0.3s ease-in-out;
+
+    &-title {
+      display: inline-block;
+      font-weight: variables.$fw-semi-bold;
+      max-width: 100% !important;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-year {
+      font-weight: variables.$fw-light;
+    }
+
+    p {
+      word-break: break-word;
+    }
+
+    &:hover {
+      color: lighten(variables.$dark, 30%);
+    }
+  }
+
+  &__price {
+    display: flex;
+    width: fit-content;
+    margin-top: auto;
+    font-weight: variables.$fw-semi-bold;
+
+    &-currency {
+      display: block;
+      margin-left: variables.rem(2px);
+      font-size: variables.rem(10px);
+      line-height: variables.rem(10px);
+    }
+  }
+
+  &__top {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    user-select: none;
+    background-color: variables.$primary;
+    pointer-events: none;
+  }
+
+  @include media.for-mobile {
+    max-width: variables.rem(171px);
+
+    &__img {
+      max-height: variables.rem(171px);
+    }
+
+    &__header span {
+      max-width: variables.rem(65px) !important;
+    }
+
+    &__price {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(16px);
+    }
+
+    &__like {
+      right: variables.rem(15px);
+      bottom: variables.rem(-12px);
+      width: variables.rem(28px);
+      height: variables.rem(28px);
+
+      &.--liked .icon-heart-fill {
+        font-size: variables.rem(12px);
+      }
+    }
+
+    &__top {
+      top: variables.rem(10px);
+      right: variables.rem(10px);
+      width: variables.rem(30px);
+      height: variables.rem(30px);
+      font-size: variables.rem(10px);
+      line-height: variables.rem(24px);
+    }
+  }
+
+  @include media.for-tablet {
+    max-width: variables.rem(240px);
+
+    &__img {
+      max-height: variables.rem(240px);
+    }
+
+    &__header {
+      margin-top: variables.rem(8px);
+
+      span {
+        max-width: variables.rem(70px) !important;
+      }
+    }
+
+    &__price {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(18px);
+    }
+
+    &__like {
+      right: variables.rem(24px);
+      bottom: variables.rem(-15px);
+      width: variables.rem(40px);
+      height: variables.rem(40px);
+
+      &.--liked .icon-heart-fill {
+        font-size: variables.rem(16px);
+      }
+    }
+
+    &__top {
+      top: variables.rem(16px);
+      right: variables.rem(16px);
+      width: variables.rem(48px);
+      height: variables.rem(48px);
+      font-size: variables.rem(13px);
+      line-height: variables.rem(34px);
+    }
+  }
+
+  @include media.for-laptop {
+    max-width: variables.rem(240px);
+
+    &__header span {
+      max-width: variables.rem(110px) !important;
+    }
+  }
+
+  @include media.for-desktop {
+    max-width: variables.rem(302px);
+    row-gap: variables.rem(32px);
+
+    &__img {
+      max-height: variables.rem(302px);
+    }
+
+    &__header {
+      margin-top: variables.rem(16px);
+
+      &-seller {
+        font-size: variables.rem(15px);
+        line-height: variables.rem(24px);
+
+        .icon-star {
+          margin-right: variables.rem(16px);
+        }
+      }
+
+      span {
+        max-width: variables.rem(160px) !important;
+      }
+    }
+
+    &__info {
+      max-width: variables.rem(265px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(39px);
+    }
+
+    &__price {
+      font-size: variables.rem(22px);
+      line-height: variables.rem(25px);
+
+      &-currency {
+        font-size: variables.rem(16px);
+        line-height: variables.rem(16px);
+      }
+    }
+  }
+}

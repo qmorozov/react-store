@@ -1,0 +1,103 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  &__slider {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(.75);
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &.swiper-pagination-progressbar {
+      top: auto;
+      height: variables.rem(1px);
+      width: 96%;
+      background: none;
+    }
+  }
+
+  & .--progressbar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: variables.$primary;
+    transform-origin: left top;
+  }
+
+  @include media.for-mobile {
+    &__slider {
+      height: variables.rem(180px);
+    }
+
+    & .--progressbar-fill {
+      width: 90%;
+    }
+
+    &__pagination.swiper-pagination-progressbar {
+      bottom: variables.rem(8px);
+      left: variables.rem(25px);
+    }
+  }
+
+  @include media.for-tablet {
+    &__slider {
+      height: variables.rem(280px);
+    }
+
+    & .--progressbar-fill {
+      width: 94%;
+    }
+
+    &__pagination.swiper-pagination-progressbar {
+      left: variables.rem(58px);
+      bottom: variables.rem(24px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__slider {
+      height: variables.rem(320px);
+    }
+
+    &__pagination.swiper-pagination-progressbar {
+      left: variables.rem(64px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__slider {
+      height: variables.rem(412px);
+    }
+
+    &__pagination.swiper-pagination-progressbar {
+      left: variables.rem(75px);
+      bottom: variables.rem(30px);
+    }
+
+    & .--progressbar-fill {
+      width: 96%;
+    }
+  }
+}

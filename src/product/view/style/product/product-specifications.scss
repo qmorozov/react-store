@@ -1,0 +1,53 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.product-specifications {
+  display: flex;
+  flex-direction: column;
+  row-gap: variables.rem(20px);
+
+  &-container {
+    row-gap: variables.rem(64px);
+
+    & > * {
+      margin-bottom: variables.rem(64px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media.for-mobile {
+      display: flex;
+      flex-direction: column;
+      margin-top: variables.rem(64px);
+
+      & > * {
+        margin: 0;
+      }
+    }
+
+    @include media.for-tablet {
+      margin-top: variables.rem(80px);
+      column-count: 2;
+      column-gap: variables.rem(82px);
+    }
+
+    @include media.for-laptop {
+      column-gap: variables.rem(102px);
+
+      & > * {
+        margin-bottom: variables.rem(80px);
+      }
+    }
+
+    @include media.for-desktop {
+      margin-top: variables.rem(101px);
+      column-gap: variables.rem(154px);
+
+      & > * {
+        margin-bottom: variables.rem(96px);
+      }
+    }
+  }
+}

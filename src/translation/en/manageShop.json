@@ -1,0 +1,17 @@
+{
+  "addShop": "Add Shop",
+  "editShop": "Edit Shop",
+  "name": "Name",
+  "description": "Description",
+  "formOfOrganization": "Form of organization",
+  "vatNumber": "VAT Number",
+  "country": "Country",
+  "city": "City",
+  "zipCode": "Zip Code",
+  "phoneNumber": "Phone Number",
+  "addPhotos": "Add Logo",
+  "updatedShopSuccess": "The store was updated successfully",
+  "createdShopSuccess": "The store was created successfully",
+  "errorEdit": "Error edit",
+  "errorAdd": "Error add"
+}

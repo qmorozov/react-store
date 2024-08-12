@@ -1,0 +1,17 @@
+{
+  "addShop": "Створити магазин",
+  "editShop": "Редагувати магазин",
+  "name": "Назва",
+  "description": "Опис",
+  "formOfOrganization": "Форма організації",
+  "vatNumber": "Номер VAT",
+  "country": "Країна",
+  "city": "Місто",
+  "zipCode": "Поштовий індекс",
+  "phoneNumber": "Номер телефону",
+  "addPhotos": "Додати лого",
+  "updateShopSuccess": "Магазин було успішно оновлено",
+  "createShopSuccess": "Магазин було успішно створенно",
+  "errorEdit": "Помилка редагування",
+  "errorAdd": "Помилка створення"
+}

@@ -1,0 +1,52 @@
+{
+  "save": "Зберегти",
+  "PageNotFound": "Сторінка не знайдена",
+  "peopleAreBuying": "Люди купують",
+  "mostViewed": "Найбільше переглянуті",
+  "popularProducts": "Популярні товари",
+  "byCategories": "За категоріями",
+  "popularModels": "Популярні моделі",
+  "brands": "Бренди",
+  "customerProtection": {
+    "1": "Захист клієнтів",
+    "2": " в Watch loop ",
+    "3": "це найбезпечніший шлях до вашої мрії",
+    "4": "розкішні аксесуари"
+  },
+  "AuthenticityGuarantee": "Гарантія автентичності",
+  "GlobalMoneyBackGuarantee": "Глобальна гарантія повернення грошей",
+  "QualityAndSafetyTeam": "Команда з якості та безпеки",
+  "PopularArticles": "Популярні статті",
+  "ByTags": "За тегами",
+  "All": "Всі",
+  "ShowAll": "Показати всі",
+  "From": "Від",
+  "To": "До",
+  "PriceFromTo": "Ціна від-до",
+  "Top": "Топ",
+  "More": "Більше",
+  "Less": "Менше",
+  "HaveAnOffer": {
+    "1": "Є пропозиція? Ми",
+    "2": "зв'яжемося з вами"
+  },
+  "FirstName": "Ім'я",
+  "PhoneNumber": "Номер телефон",
+  "Country": "Країна",
+  "CallMe": "Зателефонуй мені",
+  "ProcessingAgreement": {
+    "1": "Я згоден з ",
+    "2": "Угодою про обробку даних"
+  },
+  "Team": "Команда",
+  "FactsAndFigures": "Факти і цифри",
+  "Find": "Знайдено",
+  "MoreFilters": "Більше фільтрів",
+  "LessFilters": "Менше фільтрів",
+  "ProductTab": "Товар",
+  "SellerTab": "Продавець",
+  "notFound": "Не знайдено",
+  "selectSearch": "Пошук...",
+  "close": "Закрити",
+  "active": "Активний"
+}

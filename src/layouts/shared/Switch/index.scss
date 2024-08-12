@@ -1,0 +1,69 @@
+@use '@style/mixin/_media.scss' as media;
+@use '@style/_variables.scss' as variables;
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: variables.rem(38px);
+  height: variables.rem(20px);
+  background-color: #e6e6e6;
+  border-radius: variables.rem(55px);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: variables.rem(12px);
+
+    & > span {
+      opacity: 0.75;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  &.--checked {
+    background-color: variables.$primary;
+  }
+
+  &-thumb {
+    position: absolute;
+    top: variables.rem(2px);
+    left: variables.rem(2px);
+    width: variables.rem(16px);
+    height: variables.rem(16px);
+    background-color: #fff;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  & .switch-thumb {
+    transform: translateX(0);
+  }
+
+  & .--checked {
+    transform: translateX(18px);
+  }
+
+  @include media.for-laptop {
+    width: variables.rem(48px);
+    height: variables.rem(28px);
+
+    &-thumb {
+      width: variables.rem(24px);
+      height: variables.rem(24px);
+    }
+
+    &-wrapper {
+      display: flex;
+      gap: variables.rem(16px);
+    }
+
+    & .--checked {
+      transform: translateX(20px);
+    }
+
+  }
+}

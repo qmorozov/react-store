@@ -1,0 +1,53 @@
+{
+  "save": "Save",
+  "PageNotFound": "Page not found",
+  "peopleAreBuying": "People are buying",
+  "mostViewed": "Most viewed",
+  "popularProducts": "Popular products",
+  "byCategories": "By categories",
+  "popularModels": "Popular models",
+  "brands": "Brands",
+  "customerProtection": {
+    "1": "Customer protection",
+    "2": " on qmorozov ",
+    "3": "is the safest way to your dream ",
+    "4": "luxury accessories"
+  },
+  "AuthenticityGuarantee": "Authenticity guarantee",
+  "GlobalMoneyBackGuarantee": "Global Money Back Guarantee",
+  "QualityAndSafetyTeam": "Quality and Safety Team",
+  "PopularArticles": "Popular articles",
+  "ByTags": "By tags",
+  "All": "All",
+  "ShowAll": "Show all",
+  "From": "From",
+  "To": "To",
+  "PriceFromTo": "Price from-to",
+  "Top": "Тоp",
+  "More": "More",
+  "Less": "Less",
+  "HaveAnOffer": {
+    "1": "Have an offer? We’ll get in",
+    "2": "touch with you"
+  },
+  "FirstName": "First name",
+  "PhoneNumber": "Phone number",
+  "Country": "Country",
+  "CallMe": "Call me",
+  "ProcessingAgreement": {
+    "1": "I agree to the",
+    "2": "Data processing agreement"
+  },
+  "Team": "Team",
+  "FactsAndFigures": "Facts and figures",
+  "Find": "Find",
+  "MoreFilters": "More filters",
+  "LessFilters": "Less filters",
+  "ProductTab": "Product",
+  "SellerTab": "Seller",
+  "notFound": "Not found",
+  "selectSearch": "Search...",
+  "close": "Close",
+  "active": "Active"
+}
+

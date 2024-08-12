@@ -1,0 +1,10 @@
+{
+  "textarea": "Enter your message...",
+  "selectFileTitle": "Select your files",
+  "buttonTitle": "Send",
+  "chooseAChatRoomFromTheList": "Choose a chat room from the list",
+  "orStartANewChat": "Or start a new chat",
+  "youDontHaveAnyChatsYet": "You don't have any chats yet",
+  "goToTheMainPage": "Go to the main page",
+  "image": "image"
+}

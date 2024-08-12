@@ -1,0 +1,133 @@
+@use '@style/variables' as variables;
+@use '@style/mixin/media' as media;
+
+.message-panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-color: variables.$primary;
+
+  &.--has-review {
+    align-items: center;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  button {
+    position: absolute;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 100%;
+    font-size: 0;
+  }
+
+  button::before,
+  button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: variables.rem(1px);
+    background-color: variables.$primary;
+  }
+
+  button::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(16px);
+    min-height: variables.rem(180px);
+
+    &-wrapper {
+      gap: variables.rem(24px);
+      max-width: variables.rem(208px);
+    }
+
+    button {
+      top: variables.rem(10px);
+      right: variables.rem(10px);
+      width: variables.rem(20px);
+      height: variables.rem(20px);
+    }
+
+    button::before,
+    button::after {
+      width: variables.rem(8px);
+    }
+  }
+
+  @include media.for-tablet {
+    padding: variables.rem(40px);
+    min-height: variables.rem(280px);
+
+    &-wrapper {
+      gap: variables.rem(74px);
+    }
+
+    button {
+      top: variables.rem(12px);
+      right: variables.rem(12px);
+      width: variables.rem(24px);
+      height: variables.rem(24px);
+    }
+
+    button::before,
+    button::after {
+      width: variables.rem(10px);
+    }
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(40px);
+    min-height: variables.rem(320px);
+
+    &-wrapper {
+      gap: variables.rem(80px);
+    }
+
+    button {
+      top: variables.rem(14px);
+      right: variables.rem(14px);
+      width: variables.rem(26px);
+      height: variables.rem(26px);
+    }
+
+    button::before,
+    button::after {
+      width: variables.rem(10px);
+    }
+  }
+
+  @include media.for-desktop {
+    min-height: variables.rem(376px);
+
+    &-wrapper {
+      gap: variables.rem(54px);
+    }
+
+    button {
+      top: variables.rem(16px);
+      right: variables.rem(16px);
+      width: variables.rem(28px);
+      height: variables.rem(28px);
+    }
+
+    button::before,
+    button::after {
+      width: variables.rem(11px);
+    }
+  }
+}

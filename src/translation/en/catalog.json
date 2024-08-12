@@ -1,0 +1,23 @@
+{
+  "cheapExpensive": "From cheap to expensive",
+  "expensiveCheap": "From expensive to cheap",
+  "byRating": "By rating",
+  "filter": "Filter",
+  "offers": "Offers",
+  "about": "About",
+  "sendAMessage": "Send a message",
+  "offline": "Offline",
+  "online": "Online",
+  "rating": "Rating",
+  "productsSold": "Products sold",
+  "sellerSince": "Seller since",
+  "respondsIn": "Responds in",
+  "hours": "hours",
+  "description": "Description",
+  "noProductsInThisCategory": "No products in this category",
+  "trySelectingADifferentCategory": "Try selecting a different category",
+  "noDescription": "No description",
+  "thisSellerHasNoProducts": "This seller has no products",
+  "selectAnotherSellerOrACategory": "Select another seller, or a category",
+  "searchBy": "Search by"
+}

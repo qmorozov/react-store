@@ -1,0 +1,20 @@
+{
+  "title": "Feed",
+  "suggestsAPriceOf": "suggests a price of",
+  "doYouWantToAcceptThisPriceJustForHimFor": "Do you want to accept this price just for him for",
+  "deny": "Deny",
+  "acceptThePrice": "Accept the price",
+  "tellUsMoreYour": "Tell us more your",
+  "shop": "Shop",
+  "addADescription": "Add a description",
+  "addYourLogo": "Add your logo",
+  "attach": "Attach",
+  "days": "d",
+  "hours": "h",
+  "jumpToProducts": "Jump to products",
+  "yourFeedIsEmpty": "Your feed is empty",
+  "noInfo": {
+    "title": "You don't have any items in your feed",
+    "subTitle": "Start adding items to your feed"
+  }
+}

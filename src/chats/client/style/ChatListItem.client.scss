@@ -1,0 +1,119 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.chat-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: variables.rem(16px);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &::before {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    left: 50%;
+    content: '';
+    width: 86%;
+    height: variables.rem(2px);
+    background-color: rgba(variables.$fullBlack, 0.02);
+    transform: translateX(-50%);
+  }
+
+  &-unread {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: variables.rem(-4px);
+    top: variables.rem(-4px);
+    padding: 0 variables.rem(6px);
+    height: variables.rem(22px);
+    min-width: variables.rem(22px);
+    font-size: variables.rem(8px);
+    line-height: variables.rem(10px);
+    border-radius: variables.rem(12px);
+    color: #fff;
+    background-color: variables.$primary;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: variables.rem(8px);
+    min-width: 0;
+  }
+
+  &-name {
+    font-weight: variables.$fw-semi-bold;
+  }
+
+  &-message,
+  &-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: variables.rem(13px);
+    line-height: variables.rem(16px);
+    letter-spacing: 0.01em;
+  }
+
+  .message-meta {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0;
+    margin-left: auto;
+  }
+
+  &:hover,
+  &.--active {
+    color: #fff;
+    background-color: variables.$primary;
+
+    .chat-list__item-unread {
+      color: variables.$dark;
+      background-color: #fff;
+    }
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(16px) variables.rem(18px);
+
+    &-message,
+    &-name {
+      max-width: variables.rem(189px);
+    }
+  }
+
+  @include media.for-tablet {
+    padding: variables.rem(16px) variables.rem(30px);
+
+    &-message,
+    &-name {
+      max-width: variables.rem(94px);
+    }
+  }
+
+  @include media.for-laptop {
+    padding: variables.rem(16px) variables.rem(32px) variables.rem(16px) variables.rem(40px);
+  }
+
+  @include media.for-desktop {
+    column-gap: variables.rem(24px);
+    padding: variables.rem(24px) variables.rem(32px) variables.rem(24px) variables.rem(48px);
+
+    &-info {
+      row-gap: variables.rem(12px);
+    }
+
+    &-message,
+    &-name {
+      max-width: variables.rem(158px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(18px);
+    }
+  }
+}

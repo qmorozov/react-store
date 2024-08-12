@@ -1,0 +1,8 @@
+{
+  "register": {
+    "subject": "Hi {{name}}! Please verify your email address."
+  },
+  "forgot-password": {
+    "subject": "Hi {{name}}! Here is your password reset link."
+  }
+}

@@ -1,0 +1,37 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.product-delivery {
+  page-break-inside: avoid;
+
+  &__policy {
+    display: inline-block;
+    margin-top: variables.rem(20px);
+    word-break: break-word;
+    font-weight: variables.$fw-semi-bold;
+    font-size: variables.rem(14px);
+    line-height: variables.rem(22px);
+    border-bottom: variables.rem(1px) solid currentColor;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: lighten(variables.$dark, 40%);
+    }
+  }
+
+  @include media.for-laptop {
+    &__policy {
+      font-size: variables.rem(15px);
+      line-height: variables.rem(24px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__policy {
+      margin-top: variables.rem(32px);
+      font-size: variables.rem(16px);
+      line-height: variables.rem(29px);
+    }
+  }
+}

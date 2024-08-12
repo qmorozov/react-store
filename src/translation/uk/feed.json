@@ -1,0 +1,20 @@
+{
+  "title": "Стрічка",
+  "suggestsAPriceOf": "пропонує ціну",
+  "doYouWantToAcceptThisPriceJustForHimFor": "Ви хочете прийняти цю ціну тільки для нього на",
+  "deny": "Відмовити",
+  "acceptThePrice": "Прийняти ціну",
+  "tellUsMoreYour": "Розкажіть нам більше про ваш",
+  "shop": "Магазин",
+  "addADescription": "Додати опис",
+  "addYourLogo": "Додайте логотип",
+  "attach": "Прикріпити",
+  "days": "д",
+  "hours": "г",
+  "jumpToProducts": "Перейти до продуктів",
+  "yourFeedIsEmpty": "Ваша стрічка порожня",
+  "noInfo": {
+    "title": "У вас немає товарів у стрічці",
+    "subTitle": "Почніть додавати товари до стрічки"
+  }
+}

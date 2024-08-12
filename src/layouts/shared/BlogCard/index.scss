@@ -1,0 +1,181 @@
+@use "@style/_variables" as variables;
+@use "@style/mixin/_media" as media;
+
+.blog-card {
+  width: 100%;
+  height: 100%;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      max-height: inherit;
+      user-select: none;
+      object-position: center;
+      transition: filter .3s ease-in-out;
+
+      &:hover {
+        filter: brightness(.9);
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: variables.rem(5px);
+    margin-top: variables.rem(24px);
+
+    li {
+      font-size: variables.rem(12px);
+      font-weight: variables.$fw-medium;
+      line-height: variables.rem(14px);
+      transition: color .3s ease-in-out;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: variables.rem(100px) !important;
+
+      &:hover {
+        color: lighten(variables.$dark, 40%);
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-top: variables.rem(24px);
+    font-size: variables.rem(18px);
+    font-weight: variables.$fw-semi-bold;
+    line-height: variables.rem(29px);
+    letter-spacing: -.02em;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 100% !important;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: lighten(variables.$dark, 35%);
+    }
+  }
+
+  &__desc {
+    display: block;
+    margin-top: variables.rem(16px);
+    max-height: variables.rem(100px);
+    font-size: variables.rem(12px);
+    line-height: variables.rem(24px);
+    color: #7a7a7a;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    overflow: hidden;
+
+    &:hover {
+      color: lighten(variables.$dark, 50%);
+    }
+  }
+
+  &__date {
+    display: block;
+    margin-top: variables.rem(24px);
+    font-size: variables.rem(12px);
+    font-weight: variables.$fw-light;
+    line-height: variables.rem(14px);
+  }
+
+  @include media.for-mobile {
+    max-width: variables.rem(343px);
+    max-height: variables.rem(589px);
+
+    &__img {
+      //height: 100%;
+      max-height: variables.rem(343px);
+    }
+
+    &__tags {
+      column-gap: variables.rem(16px);
+    }
+  }
+
+  @include media.for-tablet {
+    max-width: variables.rem(383px);
+    max-height: variables.rem(605px);
+
+    &__img {
+      height: variables.rem(319px);
+    }
+
+    &__tags {
+      column-gap: variables.rem(24px);
+    }
+  }
+
+  @include media.for-laptop {
+    max-height: variables.rem(770px);
+
+    &__img {
+      height: variables.rem(399px);
+    }
+
+    &__tags li {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+    }
+
+    &__title {
+      max-width: variables.rem(450px);
+      font-size: variables.rem(20px);
+      line-height: variables.rem(32px);
+    }
+
+    &__desc {
+      max-width: variables.rem(450px);
+      font-size: variables.rem(13px);
+      line-height: variables.rem(26px);
+    }
+
+    &__date {
+      font-size: variables.rem(13px);
+      line-height: variables.rem(16px);
+    }
+  }
+
+  @include media.for-desktop {
+    max-width: variables.rem(607px);
+    max-height: variables.rem(947px);
+
+    &__img {
+      height: variables.rem(607px);
+    }
+
+    &__tags {
+      margin-top: variables.rem(58px);
+
+      li {
+        font-size: variables.rem(15px);
+        line-height: variables.rem(30px);
+      }
+    }
+
+    &__title {
+      font-size: variables.rem(24px);
+      line-height: variables.rem(38px);
+    }
+
+    &__desc {
+      font-size: variables.rem(15px);
+      line-height: variables.rem(30px);
+    }
+
+    &__date {
+      margin-top: variables.rem(16px);
+      font-size: variables.rem(15px);
+      line-height: variables.rem(30px);
+    }
+  }
+}

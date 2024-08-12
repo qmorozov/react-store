@@ -1,0 +1,32 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: variables.rem(8px);
+  user-select: none;
+  min-height: variables.rem(43px);
+  white-space: nowrap;
+
+  &__time {
+    font-weight: variables.$fw-light;
+    font-size: variables.rem(12px);
+    line-height: variables.rem(16px);
+  }
+
+  i {
+    min-width: variables.rem(14px);
+    font-size: variables.rem(8px);
+  }
+
+  @include media.for-desktop {
+    &__time {
+      font-size: variables.rem(13px);
+    }
+
+    i {
+      font-size: variables.rem(9px);
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@use 'src/styles/variables' as variables;
+@use 'src/styles/mixin/media' as media;
+
+.btn {
+  display: block;
+  font-weight: variables.$fw-medium;
+  color: #fff;
+  border: variables.rem(1px) solid transparent;
+  cursor: pointer;
+  user-select: none;
+  word-break: break-word;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  i {
+    padding-left: variables.rem(10px);
+  }
+
+  &.--primary {
+    background-color: variables.$primary;
+
+    &:disabled {
+      background-color: desaturate(variables.$primary, 60%);
+    }
+
+    &:hover:not(:disabled),
+    &:focus {
+      color: variables.$primary;
+      border-color: variables.$primary;
+      background-color: #fff;
+    }
+  }
+
+  &.--dark {
+    background-color: variables.$fullBlack;
+
+    &:disabled {
+      background-color: desaturate(variables.$fullBlack, 60%);
+    }
+
+    &:not(:disabled):hover,
+    &:focus {
+      color: variables.$fullBlack;
+      border-color: variables.$fullBlack;
+      background-color: white;
+    }
+  }
+
+  &.--transparent {
+    background: none;
+    border: variables.rem(1px) solid variables.$dark;
+    color: variables.$dark;
+
+    &:disabled {
+      background-color: desaturate(variables.$dark, 60%);
+    }
+
+    &:not(:disabled):hover,
+    &:focus {
+      color: lighten(variables.$dark, 50%);
+      border-color: lighten(variables.$dark, 50%);
+    }
+  }
+
+  &.--light {
+    background: #e6e6e6;
+    border: variables.rem(1px) solid #e6e6e6;
+    color: variables.$dark;
+
+    &:disabled {
+      background-color: desaturate(#e6e6e6, 60%);
+    }
+
+    &:not(:disabled):hover,
+    &:focus {
+      background-color: transparent;
+      border-color: variables.$dark;
+    }
+  }
+
+  &.--right-line {
+    position: relative;
+    color: variables.$fullBlack;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      width: variables.rem(1px);
+      height: variables.rem(10px);
+      background-color: variables.$dark;
+      transform: translateY(-50%);
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    &:not(:disabled):hover,
+    &:focus {
+      color: lighten(variables.$dark, 50%);
+
+      &::after {
+        background-color: lighten(variables.$dark, 50%);
+      }
+    }
+
+    background-repeat: no-repeat;
+    background-position: 92% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L4 4L7 1' stroke='%23333333'/%3E%3C/svg%3E%0A");
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(13px) variables.rem(20px);
+    font-size: variables.rem(13px);
+    line-height: variables.rem(16px);
+  }
+
+  @include media.for-tablet {
+    padding: variables.rem(10px) variables.rem(18px);
+    font-size: variables.rem(12px);
+    line-height: variables.rem(16px);
+  }
+
+  @include media.for-laptop {
+    font-size: variables.rem(13px);
+  }
+
+  @include media.for-desktop {
+    padding: variables.rem(22px) variables.rem(30px);
+    font-size: variables.rem(16px);
+    line-height: variables.rem(24px);
+  }
+}
+
+.show-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: variables.rem(13px);
+  line-height: variables.rem(25px);
+  background-color: #e6e6e6;
+  border-radius: 100%;
+  cursor: pointer;
+  user-select: none;
+  word-break: break-word;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken(#e6e6e6, 10%);
+  }
+
+  @include media.for-mobile {
+    width: variables.rem(120px);
+    height: variables.rem(120px);
+    margin-top: variables.rem(40px);
+  }
+
+  @include media.for-tablet {
+    width: variables.rem(136px);
+    height: variables.rem(136px);
+    margin-top: variables.rem(48px);
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(72px);
+  }
+
+  @include media.for-desktop {
+    width: variables.rem(176px);
+    height: variables.rem(176px);
+    margin-top: variables.rem(160px);
+    font-size: variables.rem(16px);
+    line-height: variables.rem(30px);
+  }
+}

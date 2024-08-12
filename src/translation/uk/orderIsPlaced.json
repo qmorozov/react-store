@@ -1,0 +1,21 @@
+{
+  "YourOrderHasBeenPlaced": "Ваше замовлення",
+  "YourOrderHasBeenPlacedSpan": "оформлено!",
+  "ExperienceQuestion": "Який ваш досвід? Залиште відгук",
+  "PurchaseInfo": "Ми надіслали всю інформацію про закупівлю на адресу",
+  "LeaveReview": "Це було...",
+  "LeaveReviewButton": "Залиште відгук",
+  "EditReviewButton": "Редагувати відгук",
+  "ContinueShopping": "Продовжити покупки",
+  "Message": "Перейти до повідомлень",
+  "JustNow": "Щойно зараз",
+  "Confirmation": "Після підтвердження",
+  "myOrders": "Мої замовлення",
+  "reviewWasAddedSuccessfully": "Відгук додано успішно",
+  "reviewWasEditedSuccessfully": "Відгук успішно відредаговано",
+  "leaveReviewFor": "Залиште відгук для",
+  "Pending": "Очікування",
+  "Processing": "В процесі обробки",
+  "Shipped": "Відправлено для доставки",
+  "Delivered": "Доставлено"
+}

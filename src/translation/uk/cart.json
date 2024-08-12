@@ -1,0 +1,13 @@
+{
+  "Cart": "Кошик",
+  "StartAChat": "Почати чат",
+  "SuggestAPrice": "Запропонувати ціну",
+  "TotalWithDelivery": "Разом з доставкою",
+  "Checkout": "Сплатити",
+  "YourCartIsEmpty": "Ваш кошик порожній",
+  "JumpToProducts": "Перейти до продуктів",
+  "noInfo": {
+    "title": "У вас немає товарів у кошику",
+    "subTitle": "Почніть додавати товари до кошика"
+  }
+}

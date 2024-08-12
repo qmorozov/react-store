@@ -1,0 +1,23 @@
+{
+  "cheapExpensive": "Від дешевого до дорогого",
+  "expensiveCheap": "Від дорогого до дешевого",
+  "byRating": "За рейтингом",
+  "filter": "Фільтр",
+  "offers": "Пропозиції",
+  "about": "Про продаця",
+  "sendAMessage": "Відправити повідомлення",
+  "offline": "Офлайн",
+  "online": "Онлайн",
+  "rating": "Рейтинг",
+  "productsSold": "Кількість проданих товарів",
+  "sellerSince": "Продавець з",
+  "respondsIn": "Відповідає протягом",
+  "hours": "годин",
+  "description": "Опис",
+  "noProductsInThisCategory": "У даній категорії немає товарів",
+  "trySelectingADifferentCategory": "Спробуйте вибрати іншу категорію",
+  "noDescription": "Опис відсутній",
+  "thisSellerHasNoProducts": "У цього продавця немає товарів",
+  "selectAnotherSellerOrACategory": "Виберіть іншого продавця або категорію",
+  "searchBy": "Пошук за"
+}

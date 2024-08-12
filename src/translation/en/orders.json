@@ -1,0 +1,18 @@
+{
+  "title": "Orders",
+  "goods": "goods",
+  "productWasDeleted": "Product was deleted",
+  "delivery": "Delivery",
+  "leaveReview": "Leave review",
+  "pointOfIssue": "Point of issue",
+  "buying": "Buying",
+  "selling": "Selling",
+  "noInfo": {
+    "title": "You don't have any orders",
+    "subTitle": "Start placing orders to see them here"
+  },
+  "noInfoSelling": {
+    "title": "You don't have active orders now",
+    "subTitle": "Wait until someone place order for your items"
+  }
+}

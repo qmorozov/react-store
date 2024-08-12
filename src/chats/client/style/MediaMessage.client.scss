@@ -1,0 +1,83 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+@import '../../../layouts/shared/Modal/index.scss';
+
+.message__media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin-top: variables.rem(24px);
+
+  img {
+    cursor: pointer;
+    border-radius: variables.rem(8px) variables.rem(8px) variables.rem(8px) 0;
+  }
+
+  &.--own-message {
+    margin-left: auto;
+    align-items: flex-end;
+    margin-top: variables.rem(6px);
+
+    img {
+      border-radius: variables.rem(8px) variables.rem(8px) 0 variables.rem(8px);
+    }
+
+    .message-meta {
+      float: right;
+    }
+  }
+
+  .message-meta {
+    margin-top: variables.rem(16px);
+  }
+
+  &-popup {
+    max-width: 70vw;
+    max-height: 70vh;
+
+    img {
+      object-fit: contain;
+      max-width: inherit;
+      max-height: inherit;
+      border-radius: 10px;
+    }
+  }
+
+  @include media.for-mobile {
+    img {
+      max-width: variables.rem(257px);
+      max-height: variables.rem(257px);
+    }
+
+    &-popup {
+      max-width: 80vw;
+      max-height: 80vh;
+    }
+  }
+
+  @include media.for-tablet {
+    img {
+      max-width: variables.rem(249px);
+      max-height: variables.rem(249px);
+    }
+  }
+
+  @include media.for-laptop {
+    margin-top: variables.rem(32px);
+  }
+
+  @include media.for-desktop {
+    margin-top: variables.rem(40px);
+
+    &.--own-message {
+      margin-top: variables.rem(8px);
+    }
+
+    img {
+      max-width: variables.rem(379px);
+      max-height: variables.rem(379px);
+    }
+  }
+}

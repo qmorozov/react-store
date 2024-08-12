@@ -1,0 +1,108 @@
+@use "@style/_variables.scss" as variables;
+@use "@style/mixin/_media.scss" as media;
+
+.product-seller {
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: variables.rem(40px);
+
+    span {
+      font-family: 'Times New Roman', sans-serif;
+      font-style: italic;
+      font-weight: variables.$fw-semi-bold;
+      font-size: variables.rem(16px);
+      line-height: variables.rem(26px);
+      color: white;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    img,
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: variables.rem(36px);
+      height: variables.rem(36px);
+      margin-right: variables.rem(16px);
+      border-radius: 100%;
+      background-color: #EF5DA8;
+    }
+
+    p {
+      font-weight: variables.$fw-light;
+      font-size: variables.rem(13px);
+      line-height: variables.rem(22px);
+    }
+
+    a {
+      display: inline-block;
+      padding-bottom: variables.rem(4px);
+      margin-right: variables.rem(8px);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 34%;
+      font-weight: variables.$fw-bold;
+      font-size: variables.rem(14px);
+      line-height: variables.rem(22px);
+      border-bottom: variables.rem(2px) solid variables.$fullBlack;
+      transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+
+      &:hover {
+        color: lighten(variables.$dark, 40%);
+        border-bottom-color: lighten(variables.$dark, 40%);
+      }
+    }
+  }
+
+  @include media.for-laptop {
+    &__info {
+      margin-top: variables.rem(48px);
+
+      p {
+        font-size: variables.rem(14px);
+        line-height: variables.rem(24px);
+      }
+
+      span {
+        font-size: variables.rem(20px);
+        line-height: variables.rem(32px);
+      }
+
+      img,
+      span {
+        width: variables.rem(40px);
+        height: variables.rem(40px);
+      }
+    }
+  }
+
+  @include media.for-desktop {
+    &__info {
+      margin-top: variables.rem(56px);
+
+      p {
+        font-size: variables.rem(16px);
+        line-height: variables.rem(26px);
+      }
+
+      span {
+        font-size: variables.rem(25px);
+        line-height: variables.rem(40px)
+      }
+
+      a {
+        margin-right: variables.rem(16px);
+      }
+
+      img,
+      span {
+        width: variables.rem(55px);
+        height: variables.rem(55px);
+        margin-right: variables.rem(24px);
+      }
+    }
+  }
+}

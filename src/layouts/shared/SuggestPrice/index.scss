@@ -1,0 +1,85 @@
+@use '@style/mixin/_media.scss' as media;
+@use '@style/_variables.scss' as variables;
+
+@import '../Dialog';
+
+.suggest-price {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-top: 0;
+    text-align: left;
+    margin-bottom: variables.rem(40px);
+  }
+
+  &__info {
+    font-weight: variables.$fw-light;
+    font-size: variables.rem(13px);
+    line-height: variables.rem(22px);
+  }
+
+  .btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  @include media.for-mobile {
+    .btn {
+      padding: variables.rem(17px) variables.rem(32px);
+    }
+
+    form {
+      gap: variables.rem(20px);
+      margin-bottom: variables.rem(24px);
+    }
+
+    .input-default {
+      margin-bottom: variables.rem(40px);
+    }
+  }
+
+  @include media.for-tablet {
+    .btn {
+      padding: variables.rem(17px) variables.rem(40px);
+    }
+
+    form {
+      gap: variables.rem(40px);
+      margin-bottom: variables.rem(32px);
+    }
+  }
+
+  @include media.for-laptop {
+    &__info {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(24px);
+    }
+
+    .btn {
+      padding: variables.rem(21px) variables.rem(48px);
+    }
+
+    &__title {
+      margin-bottom: variables.rem(48px);
+    }
+
+    form {
+      gap: variables.rem(48px);
+    }
+  }
+
+  @include media.for-desktop {
+    &__info {
+      font-size: variables.rem(16px);
+      line-height: variables.rem(27px);
+    }
+
+    form {
+      gap: variables.rem(64px);
+      margin-bottom: variables.rem(40px);
+    }
+  }
+}

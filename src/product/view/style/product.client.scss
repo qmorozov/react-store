@@ -1,0 +1,91 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+/* ==== Modules ==== */
+@import 'product/product-main';
+@import '../../../layouts/shared/SellerReview/style/reviews';
+@import 'product/product-specifications';
+@import 'product/product-features';
+@import 'product/product-delivery';
+@import 'product/product-seller';
+
+@import '../../../main/view/style/popular-models-slider.client';
+@import '../../../main/view/style/popular-products-slider.client';
+
+@import '../../../layouts/shared/SuggestPrice';
+
+.product {
+  &-main {
+    position: relative;
+  }
+
+  &__subtitle {
+    word-break: break-word;
+    font-weight: variables.$fw-semi-bold;
+    font-size: variables.rem(16px);
+    line-height: variables.rem(22px);
+  }
+
+  &-main-container.--small {
+    display: flex;
+    padding: 0;
+  }
+
+  .list-info {
+    margin-top: variables.rem(40px);
+  }
+
+  @include media.for-mobile {
+    &-main-container.--small {
+      flex-direction: column;
+      row-gap: variables.rem(32px);
+      margin-top: variables.rem(40px);
+    }
+  }
+
+  @include media.for-tablet {
+    &-main.-container {
+      margin-top: variables.rem(36px);
+    }
+
+    &-main-container.--small {
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: variables.rem(82px);
+    }
+  }
+
+  @include media.for-laptop {
+    .list-info {
+      margin-top: variables.rem(48px);
+    }
+
+    &-main.-container {
+      margin-top: variables.rem(42px);
+    }
+
+    &-main-container.--small {
+      column-gap: variables.rem(100px);
+    }
+
+    &__subtitle {
+      font-size: variables.rem(18px);
+      line-height: variables.rem(25px);
+    }
+  }
+
+  @include media.for-desktop {
+    &-main.-container {
+      margin-top: variables.rem(38px);
+    }
+
+    &-main-container.--small {
+      column-gap: variables.rem(152px);
+    }
+
+    &__subtitle {
+      font-size: variables.rem(24px);
+      line-height: variables.rem(34px);
+    }
+  }
+}

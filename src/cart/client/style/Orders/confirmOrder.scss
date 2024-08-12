@@ -1,0 +1,91 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+.confirm-order {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+    content: '';
+    transform: translate(-50%, -50%);
+    background-color: variables.$fullBlack;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .list-info dt span {
+    background-color: variables.$fullBlack;
+  }
+
+  &__content,
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: variables.rem(24px);
+    color: #fff;
+  }
+
+  .btn {
+    padding: variables.rem(17px) variables.rem(36px);
+    text-align: left;
+  }
+
+  .form-label p {
+    font-size: variables.rem(13px);
+    line-height: variables.rem(22px);
+    color: #a3a3a3;
+
+    a {
+      border-bottom: variables.rem(1px) solid;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: rgba(#a3a3a3, 0.5);
+      }
+    }
+  }
+
+  @include media.for-mobile {
+    padding: variables.rem(40px) 0;
+
+    &::before {
+      width: 110%;
+    }
+  }
+
+  @include media.for-tablet {
+    padding: variables.rem(56px) 0;
+
+    &::before {
+      width: 118%;
+    }
+  }
+
+  @include media.for-laptop {
+    padding: variables.rem(64px) 0;
+
+    .btn {
+      padding: variables.rem(21px) variables.rem(48px);
+    }
+
+    .form-label p {
+      font-size: variables.rem(14px);
+      line-height: variables.rem(24px);
+    }
+  }
+
+  @include media.for-desktop {
+    padding: variables.rem(94px) 0 variables.rem(104px);
+
+    .form-label p {
+      font-size: variables.rem(15px);
+      line-height: variables.rem(26px);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use '@style/_variables.scss' as variables;
+@use '@style/mixin/_media.scss' as media;
+
+@import '../../../layouts/shared/SellerReview/style/reviews.scss';
+
+.reviews-container {
+  .reviews-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media.for-mobile {
+    .reviews-items {
+      gap: variables.rem(26px);
+    }
+  }
+
+  @include media.for-tablet {
+    .reviews-items {
+      gap: variables.rem(36px);
+    }
+  }
+
+  @include media.for-laptop {
+    .reviews-items {
+      gap: variables.rem(40px);
+    }
+  }
+
+  @include media.for-desktop {
+    .reviews-items {
+      gap: variables.rem(46px);
+    }
+  }
+}
